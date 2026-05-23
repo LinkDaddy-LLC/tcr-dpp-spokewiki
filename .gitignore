@@ -1,0 +1,7 @@
+node_modules/
+dist/
+!dist/public
+!dist/public/**
+.DS_Store
+*.log
+.manus-logs/
