@@ -1,0 +1,30 @@
+[
+  {
+    "q": "What is SIZA and what is its primary mandate?",
+    "a": "SIZA, the Sustainability Initiative of South Africa, is a non-profit organization established in 2008 by the South African fruit industry. Its primary mandate is to streamline ethical trade for South African agricultural suppliers, minimizing costs and audit duplication while providing a globally aligned standard for labor and environmental compliance."
+  },
+  {
+    "q": "What are the main audit categories covered by SIZA?",
+    "a": "SIZA conducts audits across two main categories: Social (Ethical) and Environmental. The Social Audit covers labour rights, worker health & safety, and ethical practices, while the Environmental Audit focuses on environmental risks and stewardship, including water use, biodiversity, and waste management."
+  },
+  {
+    "q": "How does SIZA certification relate to EU ESPR social compliance requirements?",
+    "a": "While the EU Ecodesign for Sustainable Products Regulation (ESPR) primarily focuses on environmental aspects, SIZA\'s robust social audit framework helps South African agricultural exporters demonstrate commitment to ethical practices, aligning with the broader social sustainability and due diligence requirements emerging from EU legislation like the Corporate Sustainability Due Diligence Directive (CSDDD)."
+  },
+  {
+    "q": "What is the purpose of hashing a SIZA audit report with SHA-256?",
+    "a": "The SHA-256 hash of a SIZA audit report serves as a cryptographic fingerprint, ensuring the integrity and authenticity of the audit data without exposing sensitive underlying information. It provides verifiable proof that an audit was conducted and its outcome has not been tampered with, acting as a trust anchor in Digital Product Passports."
+  },
+  {
+    "q": "What information from a SIZA audit report is typically hashed, and what remains private?",
+    "a": "Typically, a SHA-256 hash is generated from a structured summary of the audit report, key compliance indicators, or metadata like the audit completion letter, date, and scope. The full, detailed SIZA audit report, containing sensitive information such as worker interviews and proprietary operational details, remains private, aligning with data protection principles like South Africa\'s POPIA."
+  },
+  {
+    "q": "How often are SIZA audits conducted and renewed?",
+    "a": "SIZA audit frequency and renewal are determined by a risk-based approach. All subscribers must update their Self-Assessment Questionnaires (SAQs) annually. Full third-party audits can be annual for high-risk entities or triennial for those demonstrating consistent compliance and lower risk profiles, with validity periods ranging from one to three years based on compliance status."
+  },
+  {
+    "q": "How does a hashed SIZA certificate become a trust anchor in a Digital Product Passport?",
+    "a": "When a SIZA audit is completed, a unique SHA-256 hash of a non-sensitive summary of the report is generated and embedded or referenced within the product\'s Digital Product Passport (DPP). This cryptographic link provides irrefutable proof of the audit\'s existence and integrity, allowing stakeholders to verify the authenticity of the SIZA certification without accessing confidential details, thus establishing it as a trust anchor."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "term": "Digital Product Passport",
+    "definition": "A digital record containing information about a product's lifecycle, sustainability, and compliance, mandated by EU regulations like the Ecodesign for Sustainable Products Regulation.",
+    "wikidataId": "Q133463908"
+  },
+  {
+    "term": "Ecodesign for Sustainable Products Regulation (ESPR)",
+    "definition": "An EU regulation (EU 2024/1781) that establishes a framework for setting ecodesign requirements for products, including the mandatory Digital Product Passport, to improve their environmental sustainability.",
+    "wikidataId": "Q139695161"
+  },
+  {
+    "term": "EU Market Surveillance Regulation (2019/1020)",
+    "definition": "An EU regulation that provides a framework for market surveillance authorities to ensure that products placed on the EU market comply with applicable Union harmonization legislation, including those related to Digital Product Passports.",
+    "wikidataId": "Q110094673"
+  },
+  {
+    "term": "Customs Hold",
+    "definition": "A temporary detention of goods by customs authorities at the border, often triggered by non-compliance with import regulations, including missing or invalid Digital Product Passports.",
+    "wikidataId": ""
+  },
+  {
+    "term": "SHA-256",
+    "definition": "A cryptographic hash function used to generate a unique, fixed-size string of characters from data, ensuring data integrity and authenticity for Digital Product Passports.",
+    "wikidataId": "Q110651361"
+  },
+  {
+    "term": "Demurrage",
+    "definition": "A charge payable to the owner of a chartered ship or other cargo conveyance for delays in loading or unloading beyond the agreed time, often incurred during customs holds.",
+    "wikidataId": "Q2296265"
+  },
+  {
+    "term": "Market Withdrawal Order",
+    "definition": "An official directive from market surveillance authorities requiring a product to be removed from the market due to non-compliance with regulatory requirements, such as ESPR.",
+    "wikidataId": ""
+  },
+  {
+    "term": "Trade Compliance Records (TCR)",
+    "definition": "A system for creating immutable cryptographic records of trade-related data, serving as forensic evidence in customs disputes and compliance verification.",
+    "wikidataId": ""
+  }
+]

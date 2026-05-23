@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import WikiHomePage from "./pages/WikiHomePage";
+import WikiArticlePage from "./pages/WikiArticlePage";
 import EUESPRPage from "./pages/EUESPRPage";
 import BatteryPassportPage from "./pages/BatteryPassportPage";
 import TextileTraceabilityPage from "./pages/TextileTraceabilityPage";
@@ -13,6 +14,8 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={WikiHomePage} />
+      <Route path={"/wiki"} component={WikiHomePage} />
+      <Route path={"/wiki/:slug"} component={WikiArticlePage} />
       <Route path={"/eu-espr"} component={EUESPRPage} />
       <Route path={"/battery-passport"} component={BatteryPassportPage} />
       <Route path={"/textile-traceability"} component={TextileTraceabilityPage} />

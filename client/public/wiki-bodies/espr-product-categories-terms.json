@@ -1,0 +1,42 @@
+[
+  {
+    "term": "Ecodesign for Sustainable Products Regulation (ESPR)",
+    "definition": "A new EU regulation establishing a framework for setting ecodesign requirements for sustainable products, aiming to improve product circularity, energy performance, and overall environmental sustainability.",
+    "wikidataId": "Q139695161"
+  },
+  {
+    "term": "Digital Product Passport (DPP)",
+    "definition": "An EU-mandated digital record of product lifecycle, sustainability and compliance information under the Ecodesign for Sustainable Products Regulation (EU) 2024/1781. It provides data on a product's origin, composition, repairability, and recycling options.",
+    "wikidataId": "Q133463908"
+  },
+  {
+    "term": "Delegated Act",
+    "definition": "A legislative act adopted by the European Commission to supplement or amend non-essential parts of a legislative act. Under ESPR, delegated acts will specify ecodesign requirements and product categories for DPPs.",
+    "wikidataId": "Q130388023"
+  },
+  {
+    "term": "Circular Economy",
+    "definition": "A regenerative system in which resource input and waste, emissions, and energy leakage are minimized by slowing, closing, and narrowing material and energy loops. It aims to keep products and materials in use for as long as possible.",
+    "wikidataId": "Q497743"
+  },
+  {
+    "term": "Product Category",
+    "definition": "A grouping of products with similar characteristics or functions that are subject to specific ecodesign requirements and Digital Product Passport mandates under the ESPR. Examples include textiles, batteries, and electronics.",
+    "wikidataId": ""
+  },
+  {
+    "term": "Working Plan 2025–2030",
+    "definition": "A strategic document outlining the European Commission's priorities and schedule for introducing new ecodesign requirements and Digital Product Passport mandates for additional product categories between 2025 and 2030.",
+    "wikidataId": ""
+  },
+  {
+    "term": "Data Fields",
+    "definition": "Specific pieces of information required to be included in a Digital Product Passport for a given product category. These fields vary depending on the product's nature and the relevant ecodesign requirements.",
+    "wikidataId": ""
+  },
+  {
+    "term": "Global Impact",
+    "definition": "The worldwide effect of the EU's ESPR and DPP regulations, which mandate compliance for any product sold into the EU market, regardless of its country of origin, thereby influencing global manufacturing and supply chain practices.",
+    "wikidataId": ""
+  }
+]
