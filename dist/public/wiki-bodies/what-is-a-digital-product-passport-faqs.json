@@ -1,0 +1,42 @@
+[
+  {
+    "q": "What is a Digital Product Passport (DPP)?",
+    "a": "A Digital Product Passport (DPP) is a structured set of data associated with a specific product, accessible digitally throughout its entire lifecycle. It acts as a digital identity card for products, consolidating essential information from raw material sourcing to end-of-life management, as defined by the EU’s ESPR Regulation (EU) 2024/1781."
+  },
+  {
+    "q": "Which EU regulation mandates the Digital Product Passport?",
+    "a": "The Digital Product Passport is mandated by the European Union’s Ecodesign for Sustainable Products Regulation (ESPR) (EU) 2024/1781, which entered into force on July 18, 2024."
+  },
+  {
+    "q": "When will the EU DPP registry be operational?",
+    "a": "The European Commission is mandated to establish and make operational the central digital registry for DPPs by July 19, 2026. This date is critical for products entering the EU market."
+  },
+  {
+    "q": "What kind of data does a DPP contain?",
+    "a": "A DPP contains comprehensive data across a product's lifecycle, including materials and components, production process, environmental footprint (e.g., carbon footprint), durability, repairability, recycled content, reusability, end-of-life management instructions, and compliance information."
+  },
+  {
+    "q": "How does the GS1 Digital Link standard relate to DPPs?",
+    "a": "The GS1 Digital Link standard enables the functionality of DPPs by transforming a product's unique identifier (like a GTIN) into a web link (URL). This allows physical products to connect to online information, including their Digital Product Passport entry in a registry, via QR codes, RFID tags, or NFC chips."
+  },
+  {
+    "q": "What are the implications of DPPs for South African exporters?",
+    "a": "South African exporters targeting the EU market will face mandatory compliance with DPP requirements to maintain market access after July 19, 2026. This necessitates robust data collection and management systems, supply chain collaboration, and offers a competitive advantage for early adopters."
+  },
+  {
+    "q": "How do DPPs differ from traditional certificates like Certificates of Origin?",
+    "a": "Unlike static traditional certificates (e.g., Certificates of Origin, phytosanitary certificates, REACH declarations) that provide limited, point-in-time information, DPPs offer a broader, dynamic, and lifecycle-oriented dataset. DPPs are designed to be updated throughout a product's life, providing real-time information to drive circularity and sustainability."
+  },
+  {
+    "q": "What is the National DPP Registry architecture in South Africa?",
+    "a": "The envisioned National DPP Registry architecture in South Africa leverages Cloudflare D1 as a distributed SQL database for structured data, Cloudflare KV for high-speed key-value storage, and SHA-256 cryptographic hashing for data integrity and security, ensuring a robust, scalable, and resilient infrastructure."
+  },
+  {
+    "q": "What are the economic impacts of DPP compliance for businesses?",
+    "a": "Compliance with DPPs requires initial investment in data management and technology but offers significant long-term benefits such as enhanced market access, improved brand reputation, operational efficiencies, innovation opportunities, and risk mitigation. Non-compliance can lead to market access restrictions, fines, and reputational damage."
+  },
+  {
+    "q": "Which product categories are initially targeted for DPP implementation in the EU?",
+    "a": "Initial priority product groups for DPP implementation under the ESPR include textiles (clothing, footwear), batteries, electronics (consumer, ICT), construction products, and packaging. Specific requirements and timelines will be detailed in delegated acts for each sector."
+  }
+]

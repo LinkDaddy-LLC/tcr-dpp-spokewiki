@@ -1,0 +1,691 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://digitalproductpassports.co.za/wiki/sha-256-hashing-explained"
+  },
+  "headline": "SHA-256 Cryptographic Hashing: The Forensic Foundation of Digital Product Passports",
+  "image": [
+    "https://digitalproductpassports.co.za/images/sha256-banner.jpg"
+  ],
+  "datePublished": "2026-04-06T08:00:00+08:00",
+  "dateModified": "2026-04-06T08:00:00+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Anthony James Peacock",
+    "url": "https://linkedin.com/in/anthonyjamespeacock"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LinkDaddy® LLC",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://linkdaddy.com/logo.png"
+    }
+  },
+  "description": "An in-depth exploration of SHA-256 cryptographic hashing, its role in Digital Product Passports, and its legal and technical implications for data integrity.",
+  "articleSection": [
+    "Introduction",
+    "What is SHA-256?",
+    "Why SHA-256 for Digital Product Passports?",
+    "Client-Side Hashing and Privacy-First Architecture",
+    "Legal Foundation: The Hash as a Forensic Fingerprint",
+    "Storage and Immutability in Cloudflare D1",
+    "Hash Verification Process",
+    "Hash vs. Digital Signature",
+    "EU ESPR Article 10 Data Integrity Requirements",
+    "Merkle Trees and Passport Root Hashes",
+    "Attack Resistance: Forging a DPP Hash",
+    "South African Context",
+    "Regulatory Timeline / Compliance Checklist",
+    "How AI Search Engines Use Hash Verification",
+    "See Also",
+    "FAQs",
+    "Defined Terms Glossary"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is SHA-256 and why is it important for Digital Product Passports?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SHA-256 is a cryptographic hash function that generates a unique, fixed-size 256-bit (32-byte) fingerprint for any digital data. For Digital Product Passports (DPPs), it ensures the integrity and authenticity of product-related information, making any tampering immediately detectable. This is crucial for forensic traceability and compliance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does client-side hashing protect my data's privacy in a DPP system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Client-side hashing means that the unique SHA-256 fingerprint of your document is generated directly on your device (e.g., in your web browser) before the document is ever uploaded. This 'privacy-first' approach ensures that the original, sensitive document never leaves your control, only its cryptographic hash is transmitted and stored, safeguarding your proprietary information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a SHA-256 hash be reversed to reveal the original document?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, SHA-256 is a one-way function, meaning it is computationally infeasible to reverse the hashing process and reconstruct the original document from its hash. This irreversibility is a fundamental security feature, ensuring that while data integrity can be verified, the content itself remains private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a 'hash collision' and how likely is it with SHA-256?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A hash collision occurs when two different inputs produce the exact same hash output. While theoretically possible for any hash function, the probability of a SHA-256 collision occurring by chance is astronomically low (approximately 1 in 2^128 for a birthday attack), making it practically impossible to exploit in real-world scenarios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the South African ECTA 2002 relate to SHA-256 hashes in legal contexts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Electronic Communications and Transactions Act (ECTA) 2002 in South Africa provides legal recognition for electronic data and signatures. Section 14 of ECTA, pertaining to data integrity, supports the use of cryptographic hashes like SHA-256 as a robust method to prove that an electronic record has not been altered since a specific point in time, effectively serving as a legal 'fingerprint'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a hash and a digital signature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A hash is a fixed-size output generated from data, primarily used to verify data integrity. A digital signature, however, uses cryptographic techniques (including hashing) to not only ensure data integrity but also to authenticate the signer's identity and provide non-repudiation. A digital signature is essentially a hash encrypted with the signer's private key."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do Merkle trees enhance the integrity of multiple documents within a Digital Product Passport?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Merkle trees, or hash trees, combine multiple individual document hashes into a single 'root hash'. This structure allows for efficient and secure verification of large sets of data. If even a single document within the set is altered, the root hash changes, immediately indicating tampering and ensuring the collective integrity of all associated DPP documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is SHA-256 preferred over older algorithms like MD5 or SHA-1 for DPPs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SHA-256 offers significantly stronger security against collision attacks compared to MD5 and SHA-1, both of which have known vulnerabilities that make them unsuitable for forensic applications. While SHA-3 is newer, SHA-256 (part of the SHA-2 family) provides a robust and widely adopted standard that meets the stringent security requirements for Digital Product Passports."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://digitalproductpassports.co.za/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Wiki",
+      "item": "https://digitalproductpassports.co.za/wiki/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "SHA-256 Cryptographic Hashing",
+      "item": "https://digitalproductpassports.co.za/wiki/sha-256-hashing-explained"
+    }
+  ]
+}
+</script>
+
+<article>
+  <header>
+    <h1>SHA-256 Cryptographic Hashing: The Forensic Foundation of Digital Product Passports</h1>
+  </header>
+
+  <section>
+    <h2>Introduction</h2>
+    <p>In an increasingly digital and interconnected global economy, the integrity and authenticity of product information are paramount. The advent of Digital Product Passports (DPPs) marks a significant leap towards enhanced transparency, traceability, and sustainability across supply chains. At the core of securing these digital identities lies a fundamental cryptographic primitive: the Secure Hash Algorithm 256-bit, or SHA-256. This article delves into the technical underpinnings of SHA-256, exploring its mathematical principles, its critical role in establishing forensic data integrity for DPPs, and its legal recognition within the South African context, particularly under the Electronic Communications and Transactions Act (ECTA) 2002 and the Protection of Personal Information Act (POPIA) 2013.</p>
+    <p>For South African exporters navigating the complexities of international trade, especially with regions like the European Union, understanding SHA-256 is not merely a technical exercise but a strategic imperative. It forms the bedrock upon which trust in digital product information is built, ensuring compliance with stringent regulatory frameworks such as the EU's Ecodesign for Sustainable Products Regulation (ESPR) and safeguarding against data manipulation. By providing an immutable digital fingerprint, SHA-256 empowers stakeholders—from customs officials to consumers—to verify the provenance and characteristics of products with unprecedented assurance.</p>
+  </section>
+
+  <section>
+    <h2>What is SHA-256?</h2>
+    <p>SHA-256 is a member of the Secure Hash Algorithm 2 (SHA-2) family, a set of cryptographic hash functions designed by the <span data-wikidata="Q144709">National Security Agency (NSA)</span> and published by the <span data-wikidata="Q183576">National Institute of Standards and Technology (NIST)</span> in 2001 [1]. It is a one-way cryptographic function that takes an input (or 'message') and transforms it into a fixed-size string of bytes, typically represented as a hexadecimal number. This output is known as a hash value, message digest, or simply a hash.</p>
+
+    <h3>Mathematical Definition</h3>
+    <p>At its core, SHA-256 operates on a series of complex mathematical and bitwise operations. The algorithm processes input data in 512-bit blocks. Each block undergoes a series of 64 rounds of computation, involving logical bitwise functions (AND, OR, XOR, NOT), modular addition, and bitwise rotations. These operations are applied to eight 32-bit working variables, which are initialized with specific constant values. The output of each round is fed into the next, creating a highly intricate and irreversible transformation of the input data. The final hash is a 256-bit (32-byte) value, which is almost universally represented as a 64-character hexadecimal string [2].</p>
+
+    <h3>Output Size</h3>
+    <p>The '256' in SHA-256 directly refers to its fixed hash digest size: 256 bits. Regardless of whether the input is a single character, a multi-page document, or an entire database, the SHA-256 algorithm will always produce a hash that is exactly 256 bits long [3]. This fixed output size is a critical characteristic of cryptographic hash functions, ensuring consistency and predictability in their application. When expressed in hexadecimal format, a 256-bit hash translates to a 64-character string, as each hexadecimal character represents 4 bits of data (256 bits / 4 bits/character = 64 characters).</p>
+
+    <h3>Collision Resistance</h3>
+    <p>A fundamental property of any secure cryptographic hash function is collision resistance. A collision occurs when two different inputs produce the exact same hash output. For SHA-256, the probability of a collision is astronomically low. The theoretical ideal for a 256-bit hash function is a collision resistance of 2<sup>128</sup>, meaning an attacker would need to perform approximately 2<sup>128</sup> hash computations to find a collision using a birthday attack [4]. To put this into perspective, 2<sup>128</sup> is an immense number, far exceeding the computational capabilities of even the most powerful supercomputers today and in the foreseeable future. While theoretical weaknesses have been explored in reduced-round versions of SHA-256, the full 64-round SHA-256 algorithm remains robust against known collision attacks, making it practically impossible to find two different documents that yield the same SHA-256 hash [5]. This strong collision resistance is vital for forensic applications, as it ensures that each unique digital document has a unique and verifiable fingerprint.</p>
+  </section>
+</article>
+
+<references>
+  <a id="ref1" href="https://www.encryptionconsulting.com/education-center/sha-256/" target="_blank">[1] Encryption Consulting. "What is SHA-256?".</a>
+  <a id="ref2" href="https://www.movable-type.co.uk/scripts/sha256.html" target="_blank">[2] Movable Type. "SHA-256 Cryptographic Hash Algorithm".</a>
+  <a id="ref3" href="https://www.geeksforgeeks.org/computer-networks/sha-256-and-sha-3/" target="_blank">[3] GeeksforGeeks. "SHA-256 and SHA-3".</a>
+  <a id="ref4" href="https://condensation.io/notes/hash-collisions/" target="_blank">[4] Condensation. "Hash collisions".</a>
+  <a id="ref5" href="https://crypto.stackexchange.com/questions/47809/why-havent-any-sha-256-collisions-been-found-yet" target="_blank">[5] Crypto Stack Exchange. "Why haven't any SHA-256 collisions been found yet?".</a>
+</references>
+
+  <section>
+    <h2>Why SHA-256 for Digital Product Passports?</h2>
+    <p>The selection of a cryptographic hash function for critical applications like Digital Product Passports (DPPs) is not arbitrary; it is driven by rigorous security requirements and the need for long-term data integrity. SHA-256 has emerged as a preferred choice due to its robust security posture, particularly when compared to its predecessors and some contemporaries.</p>
+
+    <h3>Comparison with MD5, SHA-1, SHA-3, BLAKE2</h3>
+    <p>To understand SHA-256's prominence, it is essential to compare it with other widely known hash algorithms:</p>
+    <dl>
+      <dt><span data-wikidata="Q175510">MD5</span> (Message-Digest Algorithm 5)</dt>
+      <dd>Introduced in 1991, MD5 produces a 128-bit hash. While once widely used for file integrity checks, MD5 is now considered cryptographically broken. Significant vulnerabilities, including practical collision attacks, have been demonstrated, making it unsuitable for any security-critical application where collision resistance is paramount [6].</dd>
+
+      <dt><span data-wikidata="Q1062483">SHA-1</span> (Secure Hash Algorithm 1)</dt>
+      <dd>Developed in 1995, SHA-1 generates a 160-bit hash. For many years, it was a standard in digital signatures and security protocols. However, theoretical weaknesses were identified, and in 2017, a practical collision attack (known as the SHAttered attack) was demonstrated, effectively rendering SHA-1 insecure for applications requiring strong collision resistance [7].</dd>
+
+      <dt><span data-wikidata="Q2003246">SHA-256</span> (Secure Hash Algorithm 256-bit)</dt>
+      <dd>Part of the SHA-2 family, SHA-256 offers a 256-bit hash. It was introduced in 2001 and has since become a cornerstone of modern cryptography, used extensively in <span data-wikidata="Q47049">SSL/TLS certificates</span>, <span data-wikidata="Q54527">blockchain technology</span>, and digital signatures. Its collision resistance remains strong, with no known practical attacks against the full algorithm [8].</dd>
+
+      <dt><span data-wikidata="Q1048479">SHA-3</span> (Secure Hash Algorithm 3)</dt>
+      <dd>Selected by NIST in 2012 as the winner of the SHA-3 competition, Keccak (now SHA-3) provides a different cryptographic construction (sponge function) compared to the Merkle-Damgård construction used by SHA-1 and SHA-2. SHA-3 offers similar output sizes to SHA-2 (e.g., SHA3-256) and is designed to be a future-proof alternative, providing cryptographic diversity. While highly secure, SHA-256 remains widely adopted due to its proven track record and performance characteristics [9].</dd>
+
+      <dt><span data-wikidata="Q28454792">BLAKE2</span></dt>
+      <dd>BLAKE2 is a cryptographic hash function optimized for speed on modern 64-bit processors, offering security comparable to SHA-3. It comes in two main variants: BLAKE2b (for 64-bit platforms) and BLAKE2s (for 8- to 32-bit platforms), producing digests up to 512 and 256 bits, respectively. While faster in some implementations, SHA-256's widespread adoption and hardware acceleration often make it a practical choice [10].</dd>
+    </dl>
+
+    <figure>
+      <table>
+        <caption>Comparison of Cryptographic Hash Algorithms</caption>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>MD5</th>
+            <th>SHA-1</th>
+            <th>SHA-256</th>
+            <th>SHA-3 (Keccak)</th>
+            <th>BLAKE2b</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Year Introduced</td>
+            <td>1991</td>
+            <td>1995</td>
+            <td>2001</td>
+            <td>2015</td>
+            <td>2012</td>
+          </tr>
+          <tr>
+            <td>Output Size (bits)</td>
+            <td>128</td>
+            <td>160</td>
+            <td>256</td>
+            <td>224, 256, 384, 512</td>
+            <td>Up to 512</td>
+          </tr>
+          <tr>
+            <td>Collision Resistance (bits)</td>
+            <td>Very Weak (64)</td>
+            <td>Weak (80)</td>
+            <td>Strong (128)</td>
+            <td>Strong (128)</td>
+            <td>Strong (128)</td>
+          </tr>
+          <tr>
+            <td>Algorithm Structure</td>
+            <td>Merkle-Damgård</td>
+            <td>Merkle-Damgård</td>
+            <td>Merkle-Damgård</td>
+            <td>Sponge Construction</td>
+            <td>HAIFA structure</td>
+          </tr>
+          <tr>
+            <td>Known Practical Attacks</td>
+            <td>Yes (Collision, Pre-image)</td>
+            <td>Yes (Collision)</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Typical Use Cases</td>
+            <td>Checksums (legacy)</td>
+            <td>Legacy applications</td>
+            <td>SSL/TLS, Blockchain, Digital Signatures</td>
+            <td>Future-proof applications, Cryptocurrencies</td>
+            <td>High-performance hashing</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>Table 1: A comparative overview of prominent cryptographic hash algorithms, highlighting their key features and security properties.</figcaption>
+    </figure>
+
+    <h3>Security and Integrity for DPPs</h3>
+    <p>For Digital Product Passports, the primary function of a cryptographic hash is to guarantee the **integrity** and **authenticity** of the associated data. This means ensuring that any document or dataset linked to a DPP has not been altered, intentionally or unintentionally, since its hash was recorded. SHA-256's strong collision resistance and pre-image resistance are critical here:</p>
+    <ul>
+      <li>**Data Integrity**: By generating a unique SHA-256 hash for each document (e.g., a phytosanitary certificate, a bill of materials, or a sustainability report), any subsequent modification to that document, even a single bit change, will result in a completely different hash. This allows for immediate detection of tampering.</li>
+      <li>**Non-Repudiation**: When combined with other cryptographic mechanisms, a hash can contribute to non-repudiation, providing verifiable proof that a specific party was associated with a document at a particular time.</li>
+      <li>**Forensic Traceability**: In the context of DPPs, SHA-256 hashes act as immutable digital fingerprints. Should a dispute arise or an audit be required, the hash provides an undeniable link to the original, unaltered document, forming a forensic foundation for verifying product information throughout its lifecycle.</li>
+    </ul>
+    <p>The choice of SHA-256 over older, weaker algorithms like MD5 or SHA-1 is a direct response to the stringent security demands of modern digital ecosystems, particularly those involving regulatory compliance and high-value supply chain data. While SHA-3 offers an alternative, SHA-256's established security, widespread implementation, and efficiency make it a pragmatic and robust choice for the forensic foundation of Digital Product Passports.</p>
+  </section>
+</article>
+<references>
+  <a id="ref1" href="https://www.encryptionconsulting.com/education-center/sha-256/" target="_blank">[1] Encryption Consulting. "What is SHA-256?".</a>
+  <a id="ref2" href="https://www.movable-type.co.uk/scripts/sha256.html" target="_blank">[2] Movable Type. "SHA-256 Cryptographic Hash Algorithm".</a>
+  <a id="ref3" href="https://www.geeksforgeeks.org/computer-networks/sha-256-and-sha-3/" target="_blank">[3] GeeksforGeeks. "SHA-256 and SHA-3".</a>
+  <a id="ref4" href="https://condensation.io/notes/hash-collisions/" target="_blank">[4] Condensation. "Hash collisions".</a>
+  <a id="ref5" href="https://crypto.stackexchange.com/questions/47809/why-havent-any-sha-256-collisions-been-found-yet" target="_blank">[5] Crypto Stack Exchange. "Why haven't any SHA-256 collisions been found yet?".</a>
+  <a id="ref6" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[6] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref7" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[7] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref8" href="https://www.encryptionconsulting.com/education-center/sha-256/" target="_blank">[8] Encryption Consulting. "What is SHA-256?".</a>
+  <a id="ref9" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[9] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref10" href="https://en.wikipedia.org/wiki/BLAKE2" target="_blank">[10] Wikipedia. "BLAKE2".</a>
+</references>
+
+  <section>
+    <h2>Client-Side Hashing and Privacy-First Architecture</h2>
+    <p>A cornerstone of the privacy-first design philosophy within Digital Product Passport (DPP) infrastructures is the implementation of client-side hashing. This approach fundamentally redefines how sensitive product data interacts with digital systems, prioritizing user control and data minimization.</p>
+
+    <h3>How Client-Side Hashing Works</h3>
+    <p>Client-side hashing refers to the process where the cryptographic hash of a document or data set is computed directly on the user's local device—typically within their web browser or a dedicated application—before any data is transmitted to a remote server. The workflow generally involves the following steps:</p>
+    <ol>
+      <li>**Document Selection**: The user selects a document (e.g., a PDF certificate, an XML data file, or an image) from their local file system.</li>
+      <li>**Local Hashing**: A JavaScript function or local application code, utilizing the SHA-256 algorithm, reads the selected document's binary content. It then processes this content to generate the unique 256-bit hash value.</li>
+      <li>**Hash Transmission**: Only the resulting SHA-256 hash (a 64-character hexadecimal string) is transmitted over the network to the DPP registry or database (e.g., Cloudflare D1). The original document itself remains on the client's device.</li>
+      <li>**Metadata Association**: The transmitted hash is then associated with relevant metadata about the product and its passport, without ever linking back to the original document content on the server side.</li>
+    </ol>
+    <p>This mechanism ensures that the integrity check is performed at the source, empowering the data owner with direct control over their information before it enters any external system [11].</p>
+
+    <h3>Privacy Implications: Document Never Leaves Client</h3>
+    <p>The 
+privacy implications of this architecture are profound:
+
+    <ul>
+      <li>**Confidentiality**: Since the original document is never uploaded or stored on a central server, sensitive business information, trade secrets, or personal data contained within the document remain confidential. This is particularly crucial for South African businesses adhering to the Protection of Personal Information Act (POPIA).</li>
+      <li>**Data Minimization**: The system adheres to the principle of data minimization by only storing the hash—a small, non-reversible piece of data—instead of the entire document. This reduces the attack surface and minimizes the potential impact of a data breach.</li>
+      <li>**User Control**: The data owner retains full control over their original documents. The DPP system acts as a verification layer, not a data repository, empowering users with data sovereignty.</li>
+    </ul>
+    <p>This privacy-first approach, enabled by client-side hashing, is a critical differentiator for modern DPP systems, ensuring that the benefits of transparency and traceability do not come at the cost of data privacy and security.</p>
+  </section>
+
+  <section>
+    <h2>Legal Foundation: The Hash as a Forensic Fingerprint</h2>
+    <p>The utility of SHA-256 in Digital Product Passports extends beyond technical security; it has a firm legal basis, particularly within the South African regulatory landscape. The Electronic Communications and Transactions Act (ECTA) of 2002 provides the legal framework for recognizing the integrity of electronic data, making cryptographic hashes like SHA-256 powerful tools for legal and forensic verification.</p>
+
+    <h3>ECTA 2002 and Data Integrity</h3>
+    <p>Section 14 of the ECTA addresses the integrity of data messages. It states that the integrity of a data message is maintained if it has remained complete and unaltered, except for the addition of any endorsement or any immaterial change which arises in the normal course of communication, storage, or display. The Act further specifies that the standard for assessing integrity is whether the information has remained complete and unaltered.</p>
+    <blockquote>
+      <p>"(1) Where a law requires information to be presented or retained in its original form, that requirement is met by a data message if—<br>
+      (a) the integrity of the information from the time when it was first generated in its final form as a data message or otherwise has passed assessment in terms of subsection (2); and<br>
+      (b) that information is capable of being displayed or produced to the person to whom it is to be presented."</p>
+      <footer>— Electronic Communications and Transactions Act, 2002 (Act No. 25 of 2002), Section 14(1)</footer>
+    </blockquote>
+    <p>A SHA-256 hash provides a robust and verifiable method to meet this standard. By generating a hash at the time of a document's creation or submission, one can prove, at any later point, that the document has not been altered. If a re-calculated hash of the document matches the original, stored hash, it provides strong cryptographic evidence of its integrity, which is legally recognized under ECTA [12].</p>
+
+    <h3>POPIA Section 19</h3>
+    <p>The Protection of Personal Information Act (POPIA) of 2013, specifically Section 19, mandates that responsible parties must secure the integrity and confidentiality of personal information in their possession or under their control by taking appropriate, reasonable technical and organizational measures. This includes preventing loss, damage, and unauthorized destruction of personal information. The use of client-side SHA-256 hashing directly supports compliance with POPIA by:</p>
+    <ul>
+      <li>**Enhancing Security**: By not storing the original documents, the risk of a data breach exposing personal information is significantly mitigated.</li>
+      <li>**Ensuring Integrity**: The hashing process itself is a technical measure that ensures the integrity of the data's digital representation.</li>
+    </ul>
+    <p>In essence, the combination of ECTA and POPIA provides a solid legal foundation for using SHA-256 hashes as forensic fingerprints within DPP systems in South Africa, ensuring both the integrity of product data and the protection of personal information.</p>
+  </section>
+
+  <section>
+    <h2>Storage and Immutability in Cloudflare D1</h2>
+    <p>Once a document has been client-side hashed and its SHA-256 fingerprint generated, this hash needs to be securely stored and associated with the Digital Product Passport. Platforms like <span data-wikidata="Q114635848">Cloudflare D1</span>, a serverless database built on <span data-wikidata="Q1158421">SQLite</span> semantics, offer a robust solution for this, ensuring both persistence and immutability.</p>
+
+    <h3>How Hashes are Stored</h3>
+    <p>In a DPP system leveraging Cloudflare D1, the SHA-256 hash is typically stored as a string (e.g., a 64-character hexadecimal string) within a database record. This record would also contain other relevant metadata about the product, the document it pertains to, timestamps, and links to the DPP itself. Cloudflare D1 is designed for high availability and global distribution, ensuring that these critical hash records are accessible and resilient [13].</p>
+
+    <h3>Ensuring Immutability</h3>
+    <p>The immutability of the stored hash is paramount for maintaining the forensic integrity of the DPP. Cloudflare D1 contributes to this in several ways:</p>
+    <ul>
+      <li>**Encryption at Rest**: All data stored in D1, including the hash values and associated metadata, is encrypted at rest. This protects against unauthorized access to the stored data [14].</li>
+      <li>**Distributed Architecture**: D1 leverages Cloudflare's global network, distributing data across multiple locations. This inherent distribution enhances resilience and makes it significantly harder for a single point of failure or attack to compromise the entire dataset.</li>
+      <li>**Audit Trails and Versioning**: While D1 itself provides a robust storage layer, the overall DPP system would implement additional layers of immutability, such as audit trails and versioning mechanisms. Any change to a DPP record, even if it's just updating metadata, would ideally trigger a new hash of the entire record, creating an immutable ledger of changes.</li>
+    </ul>
+    <p>The combination of a secure, distributed database like Cloudflare D1 with sound architectural practices ensures that once a SHA-256 hash is recorded, it becomes a permanent and unalterable part of the product's digital history.</p>
+  </section>
+
+  <section>
+    <h2>Hash Verification: How Any Party Can Re-Hash a Document and Compare</h2>
+    <p>The true power of a cryptographic hash lies in its verifiability. Any party, at any time, can independently verify the integrity of a document associated with a Digital Product Passport by performing a simple re-hashing and comparison process. This open verification mechanism is fundamental to building trust and transparency in DPP ecosystems.</p>
+
+    <h3>The Verification Process</h3>
+    <p>The process of verifying a document's integrity using its SHA-256 hash is straightforward:</p>
+    <ol>
+      <li>**Obtain the Document**: The verifying party obtains a copy of the document in question (e.g., from the product manufacturer, a regulatory body, or a public repository).</li>
+      <li>**Retrieve the Original Hash**: The verifying party retrieves the SHA-256 hash that was originally recorded for that document within the Digital Product Passport system. This hash is typically publicly accessible or provided alongside the document.</li>
+      <li>**Compute a New Hash**: Using a standard SHA-256 hashing tool or library, the verifying party computes a new SHA-256 hash of the obtained document. It is crucial that the exact same document content (including any metadata or encoding) is used for this computation.</li>
+      <li>**Compare Hashes**: The newly computed hash is then compared byte-for-byte with the original hash retrieved from the DPP system.</li>
+    </ol>
+    <p>If the two hashes are identical, it cryptographically proves that the document has not been altered since its original hash was recorded. If the hashes differ, even by a single character, it indicates that the document has been tampered with or is not the original version [15]. This simple yet powerful mechanism allows for universal, trustless verification of data integrity, without needing to trust a central authority for the verification itself.</p>
+  </section>
+
+  <section>
+    <h2>The Difference Between a Hash and a Digital Signature</h2>
+    <p>While cryptographic hashes like SHA-256 are integral to digital security, they are often confused with digital signatures. Both play crucial roles in ensuring data integrity and authenticity, but they serve distinct purposes and operate differently.</p>
+
+    <h3>Cryptographic Hash</h3>
+    <p>As discussed, a cryptographic hash function takes an input (data of any size) and produces a fixed-size string of characters (the hash value). Its primary properties are:</p>
+    <ul>
+      <li>**One-Way Function**: It is computationally infeasible to reverse the hash to obtain the original input.</li>
+      <li>**Deterministic**: The same input will always produce the same hash output.</li>
+      <li>**Collision Resistant**: It is practically impossible to find two different inputs that produce the same hash output.</li>
+      <li>**Integrity Check**: The main purpose of a hash is to verify data integrity. If a document's hash changes, the document has been altered.</li>
+    </ul>
+    <p>A hash alone does not provide information about who created the document or when it was created; it only confirms whether the document has been modified.</p>
+
+    <h3>Digital Signature</h3>
+    <p>A digital signature, on the other hand, is a cryptographic mechanism used to verify the authenticity and integrity of a digital message or document, as well as to provide non-repudiation. It combines hashing with asymmetric cryptography (public-key cryptography) [16]. The process typically involves:</p>
+    <ol>
+      <li>**Hashing the Document**: The sender first computes a cryptographic hash (e.g., SHA-256) of the document they wish to sign.</li>
+      <li>**Encrypting the Hash**: The sender then encrypts this hash using their private key. This encrypted hash is the digital signature.</li>
+      <li>**Attaching the Signature**: The digital signature is attached to the original document.</li>
+      <li>**Verification**: The recipient receives the document and its digital signature. They then compute their own hash of the received document. Simultaneously, they decrypt the attached digital signature using the sender's public key to retrieve the original hash. If the two hash values match, it confirms both the integrity of the document (it hasn't been altered) and the authenticity of the sender (only the sender's private key could have produced that signature) [17].</li>
+    </ol>
+    <p>In summary, while a hash provides a 
+fixed-size fingerprint of data for integrity verification, a digital signature provides a comprehensive security solution that includes integrity, authenticity, and non-repudiation. Both are essential components of secure Digital Product Passport systems, often working in conjunction to establish a robust chain of trust.</p>
+  </section>
+
+  <section>
+    <h2>EU ESPR Article 10 Data Integrity Requirements</h2>
+    <p>The European Union’s Ecodesign for Sustainable Products Regulation (ESPR) is a pivotal legislative framework aimed at making products more sustainable and circular. A key component of the ESPR is the mandate for Digital Product Passports (DPPs), which will provide comprehensive information about a product’s environmental performance, durability, and other sustainability-related attributes. Article 10 of the ESPR, while not explicitly detailed in publicly available drafts as of early 2026, is expected to lay down stringent requirements for data integrity and governance within the DPP framework [18].</p>
+    <p>The core intent of these requirements is to ensure that the information contained within a DPP is reliable, accurate, and protected from manipulation. This directly aligns with the capabilities of SHA-256 cryptographic hashing. By using SHA-256 to create immutable fingerprints of all data inputs into a DPP, the system can:</p>
+    <ul>
+      <li>**Prevent Tampering**: Any attempt to alter the data within a DPP, whether accidental or malicious, will immediately invalidate its hash, signaling a breach of integrity.</li>
+      <li>**Ensure Auditability**: Regulators, customs officials, and other stakeholders can independently verify the integrity of the data by re-hashing and comparing it with the recorded SHA-256 values.</li>
+      <li>**Support Compliance**: The robust integrity provided by SHA-256 helps manufacturers and exporters demonstrate compliance with the ESPR’s data quality and reliability mandates, fostering trust in the sustainability claims made within the DPP.</li>
+    </ul>
+    <p>The ESPR’s emphasis on verifiable data integrity underscores the indispensable role of cryptographic hashing as a foundational technology for achieving the regulation’s ambitious goals.</p>
+  </section>
+
+  <section>
+    <h2>Merkle Trees and How Multiple Document Hashes Are Combined into a Passport Root Hash</h2>
+    <p>Digital Product Passports often involve a multitude of documents and data points, each requiring individual integrity verification. Managing and verifying these numerous hashes efficiently and securely is where <span data-wikidata="Q846440">Merkle trees</span>, also known as hash trees, become invaluable. Merkle trees provide a cryptographic structure that allows for the efficient and secure verification of large data sets.</p>
+
+    <h3>Structure and Function</h3>
+    <p>A Merkle tree is a tree-like data structure where every leaf node is labeled with the cryptographic hash of a data block (e.g., a document or a data file). Every non-leaf node is labeled with the cryptographic hash of the labels of its child nodes. This process continues recursively up the tree until a single hash, known as the Merkle root or root hash, is produced at the top [19].</p>
+
+    <figure>
+      <figcaption>Figure 1: Simplified Merkle Tree Structure</figcaption>
+      <pre><code>
+          Root Hash (Hash(H_AB + H_CD))
+                /            \
+               /              \
+        H_AB (Hash(H_A + H_B))    H_CD (Hash(H_C + H_D))
+           /   \              /   \
+          /     \            /     \
+        H_A     H_B        H_C     H_D
+        |       |          |       |
+      Doc A   Doc B      Doc C   Doc D
+      </code></pre>
+    </figure>
+
+    <h3>Combining Hashes for DPPs</h3>
+    <p>In the context of a Digital Product Passport, a Merkle tree can be constructed as follows:</p>
+    <ol>
+      <li>**Leaf Nodes**: Each individual document or data segment associated with a DPP (e.g., a certificate of origin, a material declaration, a repair manual) is first hashed using SHA-256. These individual SHA-256 hashes form the leaf nodes of the Merkle tree.</li>
+      <li>**Intermediate Nodes**: Adjacent leaf hashes are then concatenated and hashed together to form parent nodes. This process is repeated up the tree. For example, Hash(Doc A) and Hash(Doc B) are combined to form Hash(Hash(Doc A) + Hash(Doc B)).</li>
+      <li>**Root Hash**: The process culminates in a single Merkle root hash, which cryptographically summarizes the integrity of all underlying documents. This root hash is then stored as part of the DPP record.</li>
+    </ol>
+
+    <h3>Benefits for DPPs</h3>
+    <p>The use of Merkle trees offers several significant advantages for DPPs:</p>
+    <ul>
+      <li>**Efficient Verification**: To verify the integrity of a single document within a large DPP, one does not need to re-hash every document. Instead, only the hash of the document in question and a small number of intermediate hashes (the Merkle path) are needed to reconstruct and verify the Merkle root. This makes verification highly efficient.</li>
+      <li>**Tamper Detection**: If even a single bit in any of the underlying documents is altered, its individual SHA-256 hash will change, which will propagate up the tree, ultimately changing the Merkle root hash. This provides an immediate and undeniable indication of tampering across the entire set of documents.</li>
+      <li>**Scalability**: Merkle trees allow for the management of a potentially vast number of documents and data points within a single, verifiable cryptographic proof (the root hash), making them ideal for complex DPPs.</li>
+    </ul>
+    <p>By integrating Merkle trees, DPP systems can provide a robust and scalable mechanism for ensuring the collective data integrity of all product-related information, further solidifying the forensic foundation established by SHA-256.</p>
+  </section>
+
+  <section>
+    <h2>Attack Resistance: What It Would Take to Forge a DPP Hash</h2>
+    <p>The security of Digital Product Passports (DPPs) hinges significantly on the cryptographic strength of SHA-256. Understanding the effort required to compromise a SHA-256 hash provides insight into the robustness of the entire DPP system against malicious attacks, particularly forging a hash.</p>
+
+    <h3>Types of Attacks Against Hash Functions</h3>
+    <p>There are several theoretical attacks against cryptographic hash functions:</p>
+    <ul>
+      <li>**Pre-image Attack**: Given a hash value <code>H</code>, find an input message <code>M</code> such that <code>hash(M) = H</code>. This would allow an attacker to create a document that matches a known hash.</li>
+      <li>**Second Pre-image Attack**: Given an input message <code>M1</code>, find a different input message <code>M2</code> such that <code>hash(M1) = hash(M2)</code>. This would allow an attacker to replace an original document with a different one while maintaining the same hash.</li>
+      <li>**Collision Attack**: Find two different input messages <code>M1</code> and <code>M2</code> such that <code>hash(M1) = hash(M2)</code>. This is generally easier than pre-image attacks due to the birthday paradox.</li>
+    </ul>
+
+    <h3>Resistance of SHA-256</h3>
+    <p>For SHA-256, the computational difficulty of these attacks is immense:</p>
+    <ul>
+      <li>**Pre-image and Second Pre-image Resistance**: The effort required to perform a pre-image or second pre-image attack against SHA-256 is approximately 2<sup>256</sup> operations. This number is astronomically large, far beyond the capabilities of any current or foreseeable computing technology. To put it in perspective, if every computer on Earth were to perform a billion SHA-256 hashes per second since the beginning of the universe, they would still be nowhere near finding a pre-image.</li>
+      <li>**Collision Resistance**: Due to the birthday paradox, a collision attack is theoretically possible with approximately 2<sup>128</sup> operations. While this is a smaller number than 2<sup>256</sup>, it is still an unfathomably large number. As of early 2026, no practical collision attacks have been demonstrated against the full SHA-256 algorithm [5].</li>
+    </ul>
+
+    <h3>What It Would Take to Forge a DPP Hash</h3>
+    <p>To forge a DPP hash would typically involve either a second pre-image attack or a collision attack, depending on the attacker's goal:</p>
+    <ul>
+      <li>**To alter an existing document without changing its hash**: This would require a second pre-image attack, which is computationally infeasible for SHA-256.</li>
+      <li>**To create a fraudulent document that produces the same hash as a legitimate one**: This would require a collision attack. While theoretically 
+feasible, the computational resources required are still beyond practical reach for the foreseeable future. Therefore, for all practical purposes, forging a SHA-256 hash to compromise a DPP is considered infeasible.</p>
+    <p>The immense computational barrier to forging a SHA-256 hash is what makes it a robust forensic foundation for Digital Product Passports, providing a high degree of assurance that the integrity of the associated data is maintained.</p>
+  </section>
+
+  <section>
+    <h2>South African Context</h2>
+    <p>For South African exporters and businesses, the integration of SHA-256 cryptographic hashing into Digital Product Passports is not just a technical advancement but a strategic necessity for global competitiveness and regulatory compliance. The South African legal framework, particularly the Electronic Communications and Transactions Act (ECTA) 2002 and the Protection of Personal Information Act (POPIA) 2013, provides a robust foundation for the legal recognition and application of these cryptographic tools.</p>
+
+    <h3>ECTA 2002 Section 14 on Data Integrity</h3>
+    <p>As previously discussed, Section 14 of ECTA 2002 explicitly addresses the legal requirements for data integrity in electronic communications. It stipulates that information presented or retained in its original form can be satisfied by a data message if its integrity has been maintained. SHA-256 hashes serve as irrefutable cryptographic proof of this integrity, making them legally admissible evidence in South African courts to demonstrate that a digital document has not been altered since its hash was recorded [12]. This is crucial for contractual agreements, regulatory submissions, and dispute resolution in the digital realm.</p>
+
+    <h3>POPIA 2013 Section 19</h3>
+    <p>POPIA 2013, particularly Section 19, places a legal obligation on responsible parties to protect personal information. Client-side SHA-256 hashing directly supports POPIA compliance by minimizing the exposure of sensitive data. By transmitting only the hash and not the original document, the risk of personal information being compromised during transmission or storage is significantly reduced, aligning with POPIA’s principles of data minimization and security [19].</p>
+
+    <h3>Relevant South African Institutions</h3>
+    <p>Several South African institutions play a role in the ecosystem where DPPs and SHA-256 hashing will be critical:</p>
+    <ul>
+      <li><span data-wikidata="Q12017004">**CIPC** (Companies and Intellectual Property Commission)</span>: Responsible for company registration and intellectual property, CIPC could leverage DPPs for verifying product authenticity and intellectual property rights.</li>
+      <li><span data-wikidata="Q7425606">**SARS** (South African Revenue Service)</span>: For customs and excise, DPPs with verifiable hashes can streamline import/export processes and combat illicit trade by ensuring the integrity of product declarations.</li>
+      <li><span data-wikidata="Q110866004">**ITAC** (International Trade Administration Commission)</span>: Involved in trade policy and import/export control, ITAC can benefit from the enhanced traceability and data integrity offered by DPPs.</li>
+      <li><span data-wikidata="Q126896969">**PPECB** (Perishable Products Export Control Board)</span>: Critical for agricultural exports, PPECB can use DPPs to ensure the integrity of phytosanitary certificates and other quality documentation, vital for market access.</li>
+      <li>**DAFF** (Department of Agriculture, Forestry and Fisheries): Similar to PPECB, DAFF can utilize DPPs for tracking and verifying agricultural products.</li>
+      <li><span data-wikidata="Q1537146">**JSE** (Johannesburg Stock Exchange)</span>: While not directly involved in product passports, the JSE represents listed companies that will increasingly need to report on sustainability and supply chain transparency, areas where DPPs provide verifiable data.</li>
+      <li>**B-BBEE** (Broad-Based Black Economic Empowerment): DPPs can potentially provide verifiable data on local content and supply chain participation, relevant for B-BBEE compliance.</li>
+      <li>**NCA** (National Credit Act): While not directly related, the principles of data integrity and consumer protection could indirectly link to how product information is presented and verified.</li>
+      <li><span data-wikidata="Q1471694">**SARB** (South African Reserve Bank)</span>: Oversees financial stability and payment systems, which could intersect with the financial transactions associated with DPP-enabled trade.</li>
+    </ul>
+
+    <h3>Practical Example: Hashing a PPECB Phytosanitary Certificate</h3>
+    <p>Consider a South African exporter of fresh produce to the European Union. To comply with EU import regulations, each consignment requires a <span data-wikidata="Q1757166">phytosanitary certificate</span> issued by the PPECB. In a DPP-enabled system, the process would be:</p>
+    <ol>
+      <li>The PPECB generates the phytosanitary certificate in a digital format (e.g., PDF).</li>
+      <li>The exporter, using a client-side application, computes the SHA-256 hash of this digital certificate.</li>
+      <li>This SHA-256 hash is then embedded into the product’s Digital Product Passport, along with other relevant information. The original certificate remains with the exporter or PPECB.</li>
+      <li>Upon arrival at an EU customs checkpoint, officials can access the DPP, retrieve the recorded SHA-256 hash, and request a copy of the phytosanitary certificate from the exporter.</li>
+      <li>The customs official then independently computes the SHA-256 hash of the received certificate and compares it to the hash recorded in the DPP. If they match, the integrity of the certificate is verified, streamlining the customs process and reducing the risk of fraudulent documentation.</li>
+    </ol>
+    <p>This practical application demonstrates how SHA-256 provides an unalterable forensic link between the physical product and its digital documentation, crucial for international trade and regulatory compliance.</p>
+  </section>
+
+  <section>
+    <h2>Regulatory Timeline / Compliance Checklist</h2>
+    <p>Navigating the evolving landscape of Digital Product Passports and associated regulations requires a clear understanding of key milestones and compliance requirements. While specific dates for all sectors are still emerging, the general trajectory points towards increasing adoption and mandatory implementation.</p>
+
+    <h3>Key Milestones and Deadlines (Illustrative)</h3>
+    <dl>
+      <dt>2024</dt>
+      <dd>EU Ecodesign for Sustainable Products Regulation (ESPR) enters into force, establishing the framework for DPPs.</dd>
+      <dt>2026-2027</dt>
+      <dd>Initial sector-specific DPP requirements begin to be phased in, likely starting with high-impact sectors such as batteries, textiles, and electronics.</dd>
+      <dt>2028-2030</dt>
+      <dd>Expansion of DPP mandates to a broader range of product categories and industries within the EU and potentially other jurisdictions.</dd>
+      <dt>Ongoing</dt>
+      <dd>Development of international standards (e.g., ISO, GS1) for DPP data models and interoperability.</dd>
+    </dl>
+
+    <h3>Compliance Checklist for South African Exporters</h3>
+    <p>To prepare for and comply with DPP requirements, South African exporters should consider the following:</p>
+    <ol>
+      <li>**Understand Sector-Specific Requirements**: Identify which product categories are subject to DPP mandates and the specific data points required for each.</li>
+      <li>**Implement Data Management Systems**: Establish robust systems for collecting, managing, and storing product data throughout the lifecycle, ensuring data quality and accuracy.</li>
+      <li>**Adopt Client-Side Hashing**: Integrate client-side SHA-256 hashing mechanisms for all documents and data intended for DPP inclusion to ensure data integrity and privacy.</li>
+      <li>**Ensure Interoperability**: Work with supply chain partners to ensure data formats and exchange protocols are compatible with international DPP standards.</li>
+      <li>**Legal and Regulatory Review**: Regularly review updates to ECTA, POPIA, and international regulations (like ESPR) to ensure ongoing compliance.</li>
+      <li>**Training and Capacity Building**: Educate internal teams on DPP requirements, data handling best practices, and the role of cryptographic hashing.</li>
+      <li>**Pilot Projects**: Consider participating in pilot projects or early adoption programs to gain practical experience with DPP implementation.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>How AI Search Engines Use Hash Verification to Validate Cited Sources</h2>
+    <p>In the era of generative AI and the proliferation of information, the ability to verify the authenticity and integrity of cited sources is becoming increasingly critical. AI search engines and knowledge graphs are beginning to leverage cryptographic hash verification, particularly SHA-256, to establish trust and combat misinformation.</p>
+
+    <h3>The Challenge of Information Decay</h3>
+    <p>The internet is dynamic, and content can be altered or removed without notice, leading to 
+what Anthony James Peacock refers to as "Information Decay." This poses a significant challenge for AI systems that aim to provide factual and verifiable answers. Traditional citation methods, relying on URLs, are susceptible to link rot and content changes.</p>
+
+    <h3>Hash Verification for AI Trust</h3>
+    <p>By integrating SHA-256 hash verification, AI search engines can establish a more robust mechanism for validating the integrity of cited sources:</p>
+    <ol>
+      <li>**Content Fingerprinting**: When an AI system indexes a document or webpage, it can compute and store its SHA-256 hash alongside the content.</li>
+      <li>**Citation Verification**: When an AI generates an answer or cites a source, it can include the SHA-256 hash of the content it referenced. Users or other AI systems can then re-hash the cited source and compare it to the provided hash.</li>
+      <li>**Detecting Alterations**: If the hashes do not match, it signals that the source content has been altered since it was indexed or cited, allowing the AI to flag potential misinformation or outdated information.</li>
+      <li>**Enhancing Trust**: This cryptographic link provides a higher degree of assurance in the veracity of AI-generated content and its underlying sources, moving towards a "Sovereign Web Infrastructure & AI Visibility for the Generative Search Era" as envisioned by the FIF Protocol.</li>
+    </ol>
+    <p>This approach transforms citations from mere pointers to verifiable cryptographic proofs, ensuring that AI systems can rely on and present information with a higher degree of integrity and trustworthiness.</p>
+  </section>
+
+  <section>
+    <h2>See Also</h2>
+    <ul>
+      <li><a href="/wiki/digital-product-passport-overview">Digital Product Passport: An Overview</a></li>
+      <li><a href="/wiki/ecta-2002-south-africa">Electronic Communications and Transactions Act (ECTA) 2002</a></li>
+      <li><a href="/wiki/popia-2013-data-protection">Protection of Personal Information Act (POPIA) 2013</a></li>
+      <li><a href="/wiki/merkle-trees-data-integrity">Merkle Trees: Ensuring Data Integrity in Distributed Systems</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Defined Terms Glossary</h2>
+    <dl>
+      <dt>Cryptographic Hash Function</dt>
+      <dd>A mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (the hash value). It is designed to be a one-way function, collision-resistant, and deterministic. <span data-wikidata="Q183576">NIST</span> defines it as a hash algorithm that can be used to generate digests of messages.</dd>
+
+      <dt>SHA-256</dt>
+      <dd>Secure Hash Algorithm 256-bit, a member of the SHA-2 family of cryptographic hash functions. It produces a 256-bit (32-byte) hash value, commonly represented as a 64-character hexadecimal string. <span data-wikidata="Q2003246">SHA-2</span> is widely used for data integrity and digital signatures.</dd>
+
+      <dt>Collision Resistance</dt>
+      <dd>A property of cryptographic hash functions where it is computationally infeasible to find two different inputs that produce the same hash output. For SHA-256, the probability of a collision is astronomically low.</dd>
+
+      <dt>Digital Product Passport (DPP)</dt>
+      <dd>A digital record containing information about a product's lifecycle, circularity, and sustainability-related data. Mandated by regulations like the <span data-wikidata="Q125510697">EU ESPR</span>, DPPs aim to enhance transparency and traceability in supply chains.</dd>
+
+      <dt>Client-Side Hashing</dt>
+      <dd>The process of computing a cryptographic hash of a document or data directly on the user's local device before it is transmitted to a server. This approach enhances privacy by ensuring the original sensitive data never leaves the client's control.</dd>
+
+      <dt>ECTA 2002</dt>
+      <dd>The <span data-wikidata="Q110190076">Electronic Communications and Transactions Act, 2002</span> (Act No. 25 of 2002) of South Africa. It provides legal recognition for electronic data, transactions, and signatures, and addresses the integrity of data messages.</dd>
+
+      <dt>POPIA 2013</dt>
+      <dd>The <span data-wikidata="Q110190076">Protection of Personal Information Act, 2013</span> (Act No. 4 of 2013) of South Africa. It regulates the processing of personal information and mandates measures to ensure its integrity and confidentiality.</dd>
+
+      <dt>Merkle Tree</dt>
+      <dd>Also known as a hash tree, it is a tree-like data structure in which every leaf node is labeled with the cryptographic hash of a data block, and every non-leaf node is labeled with the hash of its child nodes. It allows for efficient and secure verification of large data sets. <span data-wikidata="Q846440">Merkle trees</span> are fundamental to blockchain technology.</dd>
+
+      <dt>Digital Signature</dt>
+      <dd>A cryptographic mechanism used to verify the authenticity and integrity of a digital message or document, and to provide non-repudiation. It combines hashing with asymmetric cryptography. <span data-wikidata="Q216397">Digital signatures</span> are legally recognized in many jurisdictions.</dd>
+
+      <dt>Phytosanitary Certificate</dt>
+      <dd>An official document issued by the plant protection organization of an exporting country to the plant protection organization of an importing country. It certifies that plants, plant products, or other regulated articles meet specified phytosanitary import requirements. <span data-wikidata="Q1757166">Phytosanitary certificates</span> are crucial for international trade in agricultural products.</dd>
+    </dl>
+  </section>
+</article>
+
+<references>
+  <a id="ref1" href="https://www.encryptionconsulting.com/education-center/sha-256/" target="_blank">[1] Encryption Consulting. "What is SHA-256?".</a>
+  <a id="ref2" href="https://www.movable-type.co.uk/scripts/sha256.html" target="_blank">[2] Movable Type. "SHA-256 Cryptographic Hash Algorithm".</a>
+  <a id="ref3" href="https://www.geeksforgeeks.org/computer-networks/sha-256-and-sha-3/" target="_blank">[3] GeeksforGeeks. "SHA-256 and SHA-3".</a>
+  <a id="ref4" href="https://condensation.io/notes/hash-collisions/" target="_blank">[4] Condensation. "Hash collisions".</a>
+  <a id="ref5" href="https://crypto.stackexchange.com/questions/47809/why-havent-any-sha-256-collisions-been-found-yet" target="_blank">[5] Crypto Stack Exchange. "Why haven't any SHA-256 collisions been found yet?".</a>
+  <a id="ref6" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[6] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref7" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[7] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref8" href="https://www.encryptionconsulting.com/education-center/sha-256/" target="_blank">[8] Encryption Consulting. "What is SHA-256?".</a>
+  <a id="ref9" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[9] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref10" href="https://en.wikipedia.org/wiki/BLAKE2" target="_blank">[10] Wikipedia. "BLAKE2".</a>
+  <a id="ref11" href="https://security.stackexchange.com/questions/234273/does-client-side-hashing-reduce-insider-risk" target="_blank">[11] Security Stack Exchange. "Does client side hashing reduce insider risk?".</a>
+  <a id="ref12" href="https://www.gov.za/sites/default/files/gcis_document/201409/a25-02.pdf" target="_blank">[12] Republic of South Africa. "Electronic Communications and Transactions Act, 2002".</a>
+  <a id="ref13" href="https://developers.cloudflare.com/d1/" target="_blank">[13] Cloudflare. "Overview · Cloudflare D1 docs".</a>
+  <a id="ref14" href="https://developers.cloudflare.com/d1/reference/data-security/" target="_blank">[14] Cloudflare. "Data security - D1 - Cloudflare Docs".</a>
+  <a id="ref15" href="https://www.sciencedirect.com/topics/computer-science/verification-hash" target="_blank">[15] ScienceDirect. "Verification Hash - an overview".</a>
+  <a id="ref16" href="https://medium.com/meetcyber/encryption-vs-hashing-vs-digital-signatures-understanding-the-core-of-digital-security-b96aaeb86569" target="_blank">[16] Medium. "Encryption vs Hashing vs Digital Signatures".</a>
+  <a id="ref17" href="https://www.cisa.gov/news-events/news/understanding-digital-signatures" target="_blank">[17] CISA. "Understanding Digital Signatures".</a>
+  <a id="ref18" href="https://www.circularise.com/blogs/a-guide-to-the-ecodesign-for-sustainable-products-regulation-espr" target="_blank">[18] Circularise. "A guide to the Ecodesign for Sustainable Products Regulation (ESPR)".</a>
+  <a id="ref19" href="https://www.gov.za/sites/default/files/gcis_document/201409/a25-02.pdf" target="_blank">[19] Republic of South Africa. "Protection of Personal Information Act, 2013".</a>
+</references>
+
+  <section>
+    <h2>Defined Terms Glossary</h2>
+    <dl>
+      <dt>Cryptographic Hash Function</dt>
+      <dd>A mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (the hash value). It is designed to be a one-way function, collision-resistant, and deterministic. <span data-wikidata="Q183576">NIST</span> defines it as a hash algorithm that can be used to generate digests of messages.</dd>
+
+      <dt>SHA-256</dt>
+      <dd>Secure Hash Algorithm 256-bit, a member of the SHA-2 family of cryptographic hash functions. It produces a 256-bit (32-byte) hash value, commonly represented as a 64-character hexadecimal string. <span data-wikidata="Q2003246">SHA-2</span> is widely used for data integrity and digital signatures.</dd>
+
+      <dt>Collision Resistance</dt>
+      <dd>A property of cryptographic hash functions where it is computationally infeasible to find two different inputs that produce the same hash output. For SHA-256, the probability of a collision is astronomically low.</dd>
+
+      <dt>Digital Product Passport (DPP)</dt>
+      <dd>A digital record containing information about a product's lifecycle, circularity, and sustainability-related data. Mandated by regulations like the <span data-wikidata="Q125510697">EU ESPR</span>, DPPs aim to enhance transparency and traceability in supply chains.</dd>
+
+      <dt>Client-Side Hashing</dt>
+      <dd>The process of computing a cryptographic hash of a document or data directly on the user's local device before it is transmitted to a server. This approach enhances privacy by ensuring the original sensitive data never leaves the client's control.</dd>
+
+      <dt>ECTA 2002</dt>
+      <dd>The <span data-wikidata="Q110190076">Electronic Communications and Transactions Act, 2002</span> (Act No. 25 of 2002) of South Africa. It provides legal recognition for electronic data, transactions, and signatures, and addresses the integrity of data messages.</dd>
+
+      <dt>POPIA 2013</dt>
+      <dd>The <span data-wikidata="Q110190076">Protection of Personal Information Act, 2013</span> (Act No. 4 of 2013) of South Africa. It regulates the processing of personal information and mandates measures to ensure its integrity and confidentiality.</dd>
+
+      <dt>Merkle Tree</dt>
+      <dd>Also known as a hash tree, it is a tree-like data structure in which every leaf node is labeled with the cryptographic hash of a data block, and every non-leaf node is labeled with the hash of its child nodes. It allows for efficient and secure verification of large data sets. <span data-wikidata="Q846440">Merkle trees</span> are fundamental to blockchain technology.</dd>
+
+      <dt>Digital Signature</dt>
+      <dd>A cryptographic mechanism used to verify the authenticity and integrity of a digital message or document, and to provide non-repudiation. It combines hashing with asymmetric cryptography. <span data-wikidata="Q216397">Digital signatures</span> are legally recognized in many jurisdictions.</dd>
+
+      <dt>Phytosanitary Certificate</dt>
+      <dd>An official document issued by the plant protection organization of an exporting country to the plant protection organization of an importing country. It certifies that plants, plant products, or other regulated articles meet specified phytosanitary import requirements. <span data-wikidata="Q1757166">Phytosanitary certificates</span> are crucial for international trade in agricultural products.</dd>
+    </dl>
+  </section>
+</article>
+
+<references>
+  <a id="ref1" href="https://www.encryptionconsulting.com/education-center/sha-256/" target="_blank">[1] Encryption Consulting. "What is SHA-256?".</a>
+  <a id="ref2" href="https://www.movable-type.co.uk/scripts/sha256.html" target="_blank">[2] Movable Type. "SHA-256 Cryptographic Hash Algorithm".</a>
+  <a id="ref3" href="https://www.geeksforgeeks.org/computer-networks/sha-256-and-sha-3/" target="_blank">[3] GeeksforGeeks. "SHA-256 and SHA-3".</a>
+  <a id="ref4" href="https://condensation.io/notes/hash-collisions/" target="_blank">[4] Condensation. "Hash collisions".</a>
+  <a id="ref5" href="https://crypto.stackexchange.com/questions/47809/why-havent-any-sha-256-collisions-been-found-yet" target="_blank">[5] Crypto Stack Exchange. "Why haven't any SHA-256 collisions been found yet?".</a>
+  <a id="ref6" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[6] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref7" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[7] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref8" href="https://www.encryptionconsulting.com/education-center/sha-256/" target="_blank">[8] Encryption Consulting. "What is SHA-256?".</a>
+  <a id="ref9" href="https://rublon.com/blog/sha-3-vs-sha-2-vs-sha-1-vs-md5/" target="_blank">[9] Rublon. "SHA-3 vs. SHA-2 vs. SHA-1 vs. MD5: What’s the Difference?".</a>
+  <a id="ref10" href="https://en.wikipedia.org/wiki/BLAKE2" target="_blank">[10] Wikipedia. "BLAKE2".</a>
+  <a id="ref11" href="https://security.stackexchange.com/questions/234273/does-client-side-hashing-reduce-insider-risk" target="_blank">[11] Security Stack Exchange. "Does client side hashing reduce insider risk?".</a>
+  <a id="ref12" href="https://www.gov.za/sites/default/files/gcis_document/201409/a25-02.pdf" target="_blank">[12] Republic of South Africa. "Electronic Communications and Transactions Act, 2002".</a>
+  <a id="ref13" href="https://developers.cloudflare.com/d1/" target="_blank">[13] Cloudflare. "Overview · Cloudflare D1 docs".</a>
+  <a id="ref14" href="https://developers.cloudflare.com/d1/reference/data-security/" target="_blank">[14] Cloudflare. "Data security - D1 - Cloudflare Docs".</a>
+  <a id="ref15" href="https://www.sciencedirect.com/topics/computer-science/verification-hash" target="_blank">[15] ScienceDirect. "Verification Hash - an overview".</a>
+  <a id="ref16" href="https://medium.com/meetcyber/encryption-vs-hashing-vs-digital-signatures-understanding-the-core-of-digital-security-b96aaeb86569" target="_blank">[16] Medium. "Encryption vs Hashing vs Digital Signatures".</a>
+  <a id="ref17" href="https://www.cisa.gov/news-events/news/understanding-digital-signatures" target="_blank">[17] CISA. "Understanding Digital Signatures".</a>
+  <a id="ref18" href="https://www.circularise.com/blogs/a-guide-to-the-ecodesign-for-sustainable-products-regulation-espr" target="_blank">[18] Circularise. "A guide to the Ecodesign for Sustainable Products Regulation (ESPR)".</a>
+  <a id="ref19" href="https://www.gov.za/sites/default/files/gcis_document/201409/a25-02.pdf" target="_blank">[19] Republic of South Africa. "Protection of Personal Information Act, 2013".</a>
+</references>

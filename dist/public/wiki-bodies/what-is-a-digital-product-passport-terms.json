@@ -1,0 +1,72 @@
+[
+  {
+    "term": "Digital Product Passport (DPP)",
+    "definition": "A structured set of data associated with a specific product, accessible digitally throughout its entire lifecycle, designed to enhance transparency, improve product traceability, and facilitate the transition towards a circular economy.",
+    "wikidataId": "Q105543867"
+  },
+  {
+    "term": "Ecodesign for Sustainable Products Regulation (ESPR)",
+    "definition": "EU Regulation (EU) 2024/1781, which mandates the Digital Product Passport and sets ecodesign requirements for nearly all physical goods placed on the EU market to improve their environmental sustainability.",
+    "wikidataId": "Q120636606"
+  },
+  {
+    "term": "Circular Economy",
+    "definition": "An economic system aimed at eliminating waste and the continual use of resources. Circular systems employ reuse, repair, refurbishment, remanufacturing, and recycling to create a closed-loop system, minimizing resource input and waste generation.",
+    "wikidataId": "Q1140228"
+  },
+  {
+    "term": "GS1 Digital Link Standard",
+    "definition": "A standard that extends the utility of traditional GS1 identifiers by making them web-enabled, allowing a product's unique identifier to link directly to online information, including its Digital Product Passport.",
+    "wikidataId": "Q105543867" 
+  },
+  {
+    "term": "Data Carrier",
+    "definition": "The physical or digital mechanism (e.g., QR code, RFID tag, NFC chip) that links a tangible product to its Digital Product Passport.",
+    "wikidataId": null
+  },
+  {
+    "term": "Data Model",
+    "definition": "The standardized structure and format for organizing the information contained within a Digital Product Passport, ensuring interoperability across different products and sectors.",
+    "wikidataId": null
+  },
+  {
+    "term": "Registry",
+    "definition": "A central or distributed system for storing, managing, and providing access to Digital Product Passports, ensuring data integrity and access control.",
+    "wikidataId": null
+  },
+  {
+    "term": "Carbon Footprint",
+    "definition": "The total greenhouse gas emissions caused by an individual, event, organization, service, place or product, expressed as carbon dioxide equivalent.",
+    "wikidataId": "Q862781"
+  },
+  {
+    "term": "Cloudflare D1",
+    "definition": "A serverless SQL database built on SQLite, distributed globally across Cloudflare's edge network, used for storing structured, relational data with low latency.",
+    "wikidataId": "Q118252197"
+  },
+  {
+    "term": "Cloudflare KV",
+    "definition": "A globally distributed, eventually consistent key-value store optimized for high-read workloads, used for storing frequently accessed, less structured data or for caching.",
+    "wikidataId": "Q118252197"
+  },
+  {
+    "term": "SHA-256",
+    "definition": "A cryptographic hash function used for data integrity and security, generating unique, fixed-size hash values for data to verify authenticity and detect tampering.",
+    "wikidataId": "Q465223"
+  },
+  {
+    "term": "Carbon Border Adjustment Mechanism (CBAM)",
+    "definition": "An EU initiative designed to put a fair price on the carbon emitted during the production of carbon-intensive goods that are imported into the EU, supported by verifiable data from DPPs.",
+    "wikidataId": "Q110887624"
+  },
+  {
+    "term": "Protection of Personal Information Act (POPIA) 2013",
+    "definition": "South African legislation that governs the processing of personal information, ensuring data privacy and protection.",
+    "wikidataId": "Q7228747"
+  },
+  {
+    "term": "Companies and Intellectual Property Commission (CIPC)",
+    "definition": "The South African government agency responsible for business registration and compliance, as well as intellectual property rights.",
+    "wikidataId": "Q5038107"
+  }
+]

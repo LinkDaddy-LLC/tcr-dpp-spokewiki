@@ -1,0 +1,224 @@
+<article>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Phytosanitary Digital Twins: How South African Plant Health Certificates Become DPP Data",
+    "author": {
+      "@type": "Person",
+      "name": "Anthony James Peacock",
+      "url": "https://linkedin.com/in/anthonyjamespeacock"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LinkDaddy® LLC",
+      "url": "https://linkdaddy.com",
+  "sameAs": ["https://linkdaddy.com"]
+    },
+    "image": "https://digitalproductpassports.co.za/images/phytosanitary-digital-twin.jpg",
+    "datePublished": "2026-04-06T12:00:00Z",
+    "dateModified": "2026-04-06T12:00:00Z",
+    "articleSection": "Technical",
+    "keywords": "phytosanitary certificate, digital twin, DPP, SHA-256, IPPC, DAFF, South Africa, agriculture, EU regulation, False Codling Moth, TRACES NT",
+    "description": "This article explores the transformation of traditional phytosanitary certificates into digital twins within the Digital Product Passport framework, focusing on South African agricultural exports.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://digitalproductpassports.co.za/wiki/phytosanitary-digital-twin"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "phytosanitary certificate",
+      "sameAs": "http://www.wikidata.org/entity/Q1143635"
+    },
+    "proficiencyLevel": "Expert",
+    "audience": "Agricultural exporters, regulators, supply chain professionals, technology developers",
+    "faq": [
+      {"@type": "Question", "name": "What is a phytosanitary certificate?", "acceptedAnswer": {"@type": "Answer", "text": "A phytosanitary certificate is an official document issued by a National Plant Protection Organization (NPPO) to certify that consignments of plants, plant products, or other regulated articles meet the phytosanitary import requirements of the importing country and are free from regulated pests."}},
+      {"@type": "Question", "name": "What is the role of the IPPC in phytosanitary certification?", "acceptedAnswer": {"@type": "Answer", "text": "The International Plant Protection Convention (IPPC) is an intergovernmental treaty that develops and promotes International Standards for Phytosanitary Measures (ISPMs), such as ISPM 12, to facilitate safe trade and prevent the spread of plant pests."}},
+      {"@type": "Question", "name": "How does the ePhyto system work?", "acceptedAnswer": {"@type": "Answer", "text": "The ePhyto system is an electronic system developed by the IPPC to facilitate the exchange of phytosanitary certificates between National Plant Protection Organizations (NPPOs) in a standardized XML format, enhancing efficiency and security."}},
+      {"@type": "Question", "name": "What is a digital twin in the context of phytosanitary certificates?", "acceptedAnswer": {"@type": "Answer", "text": "A digital twin of a phytosanitary certificate is a virtual replica of the physical document, created by hashing its data (e.g., using SHA-256) and linking it to a Digital Product Passport (DPP). This allows for real-time verification and traceability within the supply chain."}},
+      {"@type": "Question", "name": "Why is the False Codling Moth a concern for South African citrus exports to the EU?", "acceptedAnswer": {"@type": "Answer", "text": "The False Codling Moth (Thaumatotibia leucotreta) is a quarantine pest for the EU. Its presence in South African citrus can lead to import restrictions, making stringent phytosanitary measures like cold treatment protocols essential for market access."}}
+    ]
+  }
+  </script>
+
+  <h1>Phytosanitary Digital Twins: How South African Plant Health Certificates Become DPP Data</h1>
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>The global trade in agricultural products relies heavily on robust phytosanitary measures to prevent the international spread of plant pests and diseases. At the heart of this system are <span data-wikidata="Q1143635">phytosanitary certificates</span>, official documents that attest to the health status of plant consignments. As the world moves towards greater digitalization and transparency in supply chains, the concept of Digital Product Passports (DPPs) is emerging as a transformative tool. This article explores the critical intersection of phytosanitary certification and DPPs, focusing on how traditional South African plant health certificates can be transformed into verifiable digital twins, thereby enhancing traceability, compliance, and market access in the generative search era.</p>
+  </section>
+
+  <section>
+    <h2>2. Phytosanitary Certificates: The Foundation of Plant Health Trade</h2>
+    <h3>2.1. Defining Phytosanitary Certificates and the IPPC Standard</h3>
+    <p>A phytosanitary certificate is an official document issued by the National Plant Protection Organization (NPPO) of the exporting country to the NPPO of the importing country. Its primary purpose is to certify that consignments of plants, plant products, or other regulated articles meet the phytosanitary import requirements of the importing country and are free from regulated pests [1]. This certification is crucial for facilitating safe international trade while protecting agricultural resources and biodiversity from invasive species.</p>
+    <p>The framework for these certificates is established by the <span data-wikidata="Q1185060">International Plant Protection Convention (IPPC)</span>, an intergovernmental treaty deposited with the Director-General of the Food and Agriculture Organization of the United Nations (FAO). The IPPC develops and promotes <span data-wikidata="Q6054894">International Standards for Phytosanitary Measures (ISPMs)</span>, which serve as global benchmarks for plant health. Specifically, ISPM 12, titled 'Guidelines for Phytosanitary Certificates', provides detailed principles and guidelines for the preparation and issue of these certificates [2].</p>
+    <blockquote>
+      <p>The certifying statement on a phytosanitary certificate typically declares that the plants, plant products or other regulated articles described herein have been inspected and/or tested according to appropriate official procedures and are considered to be free from the quarantine pests specified by the importing contracting party and to conform with the current phytosanitary regulations of the importing contracting party, and that, where appropriate, the consignment is considered to conform with the importing contracting party's requirements concerning regulated non-quarantine pests [2].</p>
+    </blockquote>
+
+    <h3>2.2. South African Issuing Authority: DAFF (now DALRRD)</h3>
+    <p>In South Africa, the responsibility for issuing phytosanitary certificates rests with the National Plant Protection Organization (NPPO), which is the Department of Agriculture, Land Reform and Rural Development (DALRRD), formerly known as the Department of Agriculture, Forestry and Fisheries (DAFF) [3]. The DALRRD, through its Directorate Plant Health, ensures that all plant and plant product exports comply with the phytosanitary requirements of importing countries. This involves inspections, laboratory testing, and the application of various phytosanitary treatments as necessary. Exporters in South Africa apply for these certificates through platforms like eCert, which streamlines the application process and facilitates communication with the NPPO [4]. The integrity and reliability of these certificates are paramount for maintaining South Africa's reputation as a trusted supplier in the global agricultural market.</p>
+  </section>
+
+  <section>
+    <h2>3. The ePhyto System: Digitalizing Plant Health Certification</h2>
+    <h3>3.1. IPPC's Electronic Phytosanitary Certificate Hub</h3>
+    <p>The IPPC recognized the need to modernize phytosanitary certification processes, leading to the development of the ePhyto Solution. This initiative aims to replace traditional paper-based certificates with electronic versions, known as ePhytos. The ePhyto system comprises two main components: the ePhyto Hub and the Generic National System (GeNS) [5]. The ePhyto Hub acts as a central exchange mechanism, allowing National Plant Protection Organizations (NPPOs) worldwide to securely exchange electronic phytosanitary certificates in a standardized XML format. GeNS is a web-based system provided by the IPPC to assist countries that do not have their own electronic systems to generate, send, and receive ePhytos. The benefits of the ePhyto system are substantial, including increased efficiency, reduced administrative burden, enhanced security against fraud, and improved traceability of consignments [6]. South Africa has been actively implementing its e-phyto system for export certification, resuming operations in November 2019 [7].</p>
+
+    <h3>3.2. From Paper to Digital: SHA-256 Hashing and DPP Integration</h3>
+    <p>The transition from physical phytosanitary certificates to digital twins within a Digital Product Passport (DPP) framework involves several key technological steps. Once the data from a phytosanitary certificate is digitized, it can be subjected to cryptographic hashing using algorithms like <a href="/wiki/sha-256-hashing-explained">SHA-256</a>. SHA-256 (Secure Hash Algorithm 256-bit) generates a unique, fixed-size string of characters (a hash) from the input data [8]. Even a minor alteration to the original certificate data would result in a completely different hash, making it an excellent tool for ensuring data integrity and authenticity. This hash acts as a digital fingerprint for the phytosanitary certificate.</p>
+    <p>This SHA-256 hash can then be embedded within or linked to a <a href="/wiki/what-is-a-digital-product-passport">Digital Product Passport</a>. A DPP serves as a comprehensive digital record for a product, containing information about its origin, materials, manufacturing processes, and sustainability attributes. By linking the phytosanitary certificate's SHA-256 hash to the DPP, a verifiable and immutable record of the plant health status is created. This linkage forms the basis of a digital twin for the phytosanitary certificate – a virtual replica that mirrors the physical document's information and status in real-time within the DPP ecosystem. This digital twin provides enhanced transparency and trust, allowing stakeholders across the supply chain, from exporters to importers and regulatory bodies, to instantly verify the authenticity and integrity of the phytosanitary data associated with a consignment [9].</p>
+  </section>
+
+  <section>
+    <h2>4. EU Regulations and South African Produce: A Case Study</h2>
+    <h3>4.1. EU Plant Health Regulation 2016/2031</h3>
+    <p>The European Union's commitment to protecting its territory from plant pests is enshrined in Regulation (EU) 2016/2031 on protective measures against plant pests, which came into force in December 2019 [10]. This regulation significantly tightened import requirements for plants, plant products, and other objects entering the EU, aiming for a more proactive approach to plant health. For South African produce, particularly citrus, compliance with this regulation is critical for market access. The regulation mandates that certain plants and plant products from non-EU countries must be accompanied by a phytosanitary certificate guaranteeing their inspection and freedom from specified quarantine pests [11]. Any changes to these phytosanitary requirements by the EU can have significant implications for South African exporters, as evidenced by past disputes over citrus imports [12].</p>
+
+    <h3>4.2. The False Codling Moth Challenge</h3>
+    <p>One of the most significant phytosanitary risks for South African citrus exports to the EU is the <span data-wikidata="Q2704439">False Codling Moth (FCM)</span>, <em>Thaumatotibia leucotreta</em>. FCM is a polyphagous pest endemic to sub-Saharan Africa and is considered a quarantine pest by the EU [13]. Infestation by FCM can lead to severe damage to citrus fruit, making it unsuitable for export. The presence of FCM in South African citrus consignments has historically led to interceptions and trade disruptions, prompting the EU to impose stringent import conditions. South African citrus growers invest substantial resources annually to comply with FCM mitigation measures, highlighting the economic impact of this pest [14].</p>
+
+    <h3>4.3. Cold Treatment Protocols and Data Integration</h3>
+    <p>To mitigate the risk of FCM and ensure compliance with EU import regulations, cold treatment protocols are widely employed for South African citrus exports. Cold treatment involves maintaining the fruit at specific low temperatures for a prescribed duration, which is lethal to FCM larvae without harming the fruit [15]. The effectiveness of cold treatment relies on precise temperature monitoring and meticulous record-keeping. Temperature logs, detailing the duration and temperature profiles of the treatment, are crucial components of the phytosanitary documentation. In a digital twin framework, these temperature logs, along with other treatment data, can be digitally recorded and linked to the phytosanitary certificate's SHA-256 hash within the DPP. This integration provides an auditable and verifiable chain of custody for the phytosanitary treatment, offering irrefutable proof of compliance to importing authorities. ISPM 42, 'Requirements for the use of temperature treatments as phytosanitary measures', provides guidelines for such treatments, emphasizing the importance of accurate records for traceability [16].</p>
+  </section>
+
+  <section>
+    <h2>5. TRACES NT and Automated Verification</h2>
+    <h3>5.1. TRACES NT: EU Import Notification System</h3>
+    <p>The Trade Control and Expert System New Technology (TRACES NT) is the European Union's official electronic platform for managing health certificates for animals, animal products, food and feed of non-animal origin, and plants and plant products imported into the EU [17]. It serves as a critical tool for EU Member States' competent authorities to perform official controls and for traders to notify consignments prior to their arrival. For plant products, TRACES NT facilitates the exchange of information related to phytosanitary certificates, including those issued through the ePhyto system. When an ePhyto is issued by an exporting country, its data can be transmitted to TRACES NT, streamlining the import notification process and enabling authorities to pre-assess risks before the physical arrival of goods [18].</p>
+
+    <h3>5.2. The Future: Automated Phytosanitary Verification via DPP API</h3>
+    <p>The integration of phytosanitary digital twins with DPPs paves the way for a future of automated phytosanitary verification at EU ports of entry. Imagine a scenario where a consignment of South African citrus arrives at an EU port. Instead of manual checks of paper certificates, customs officials could scan a QR code or NFC tag linked to the product's DPP. This DPP would instantly provide access to the digital twin of the phytosanitary certificate, including its SHA-256 hash, ePhyto data, and integrated cold treatment logs. Through a DPP Application Programming Interface (API), this data could be automatically cross-referenced with TRACES NT and other regulatory databases in real-time. This automated verification process would significantly reduce inspection times, minimize human error, enhance supply chain efficiency, and provide an unprecedented level of assurance regarding the phytosanitary status of imported produce. This vision aligns with the broader goals of the EU's Digital Product Passport initiative, which seeks to enhance transparency and sustainability across various product categories [19].</p>
+  </section>
+
+  <section>
+    <h2>6. South African Context</h2>
+    <p>The adoption of phytosanitary digital twins and their integration with DPPs holds significant implications for South Africa's agricultural export sector. The Department of Agriculture, Land Reform and Rural Development (DALRRD) plays a pivotal role as the NPPO, ensuring compliance with international and importing country phytosanitary standards. Organizations such as the Perishable Products Export Control Board (PPECB) are instrumental in quality assurance and cold chain management, with their data potentially feeding into DPPs. Industry associations like Citrus Growers' Association of Southern Africa (Citrus SA) and Hortgro (for deciduous fruit) actively engage in research and advocacy to address phytosanitary challenges and ensure market access. The Fruit South Africa Exporters' Forum (FPEF) represents the interests of fruit exporters, advocating for efficient trade processes. The legal framework in South Africa, including the Electronic Communications and Transactions Act (ECTA) 2002 and the Protection of Personal Information Act (POPIA) 2013, provides the necessary legal basis for digital documentation and data protection, respectively. Furthermore, the Companies and Intellectual Property Commission (CIPC) verification process, which is crucial for business registration and compliance, can be integrated into the DPP onboarding process to establish foundational identity anchors for agricultural businesses [20]. This emphasis on sovereign data ownership and control is vital for South African exporters to maintain competitive advantage and ensure the integrity of their digital trade assets.</p>
+    <table>
+      <caption>Key South African Stakeholders in Phytosanitary Certification</caption>
+      <thead>
+        <tr>
+          <th>Stakeholder</th>
+          <th>Role</th>
+          <th>Relevance to Phytosanitary Digital Twins</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DALRRD</td>
+          <td>National Plant Protection Organization (NPPO)</td>
+          <td>Issuing authority for phytosanitary certificates and ePhytos.</td>
+        </tr>
+        <tr>
+          <td>PPECB</td>
+          <td>Quality assurance and cold chain management</td>
+          <td>Provides critical data for cold treatment verification within DPPs.</td>
+        </tr>
+        <tr>
+          <td>Citrus SA / Hortgro</td>
+          <td>Industry associations</td>
+          <td>Drive research, advocacy, and adoption of new technologies.</td>
+        </tr>
+        <tr>
+          <td>FPEF</td>
+          <td>Exporters' forum</td>
+          <td>Advocates for efficient and streamlined trade processes.</td>
+        </tr>
+        <tr>
+          <td>CIPC</td>
+          <td>Business registration and compliance</td>
+          <td>Provides foundational identity verification for DPP onboarding.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>7. Conclusion</h2>
+    <p>The evolution from traditional paper-based phytosanitary certificates to verifiable digital twins within a Digital Product Passport framework represents a significant leap forward for international agricultural trade. For South Africa, this transformation offers a powerful mechanism to enhance the traceability, authenticity, and compliance of its agricultural exports, particularly in navigating complex regulatory landscapes like the EU. By leveraging technologies such as SHA-256 hashing and integrating with systems like ePhyto and TRACES NT, phytosanitary digital twins can unlock unprecedented levels of transparency and efficiency, ultimately securing market access and fostering trust in the global supply chain. The future of plant health certification is digital, interconnected, and driven by data, ensuring safer and more sustainable trade for all.</p>
+  </section>
+
+  <section>
+    <h2>8. See Also</h2>
+    <ul>
+      <li><a href="/wiki/sha-256-hashing-explained">SHA-256 Hashing Explained</a></li>
+      <li><a href="/wiki/eu-espr-regulation">EU ESPR Regulation</a></li>
+      <li><a href="/wiki/what-is-a-digital-product-passport">What is a Digital Product Passport</a></li>
+      <li><a href="/wiki/cipc-verification-dpp-onboarding">CIPC Verification DPP Onboarding</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. References</h2>
+    <ol>
+      <li>International Plant Protection Convention. (n.d.). <em>About the IPPC</em>. Retrieved from https://www.ippc.int/</li>
+      <li>International Plant Protection Convention. (2001). <em>ISPM 12: Guidelines for Phytosanitary Certificates</em>. FAO. Retrieved from https://www.ippc.int/largefiles/adopted_ISPMs_previousversions/en/ISPM_12_2001_En_2006-05-03.pdf</li>
+      <li>Department of Agriculture, Land Reform and Rural Development. (n.d.). <em>Plant Health</em>. Retrieved from https://www.dalrrd.gov.za/Branches/Agricultural-Production-Health-Food-Safety/Plant-Health</li>
+      <li>eCert. (n.d.). <em>Application for a Phytosanitary Certificate</em>. Retrieved from https://ecert.co.za/docs/application-for-a-phytosanitary-certificate/</li>
+      <li>International Plant Protection Convention. (n.d.). <em>IPPC ePhyto Solution</em>. Retrieved from https://www.ippc.int/en/ephyto/</li>
+      <li>International Plant Protection Convention. (n.d.). <em>ePhyto Technical Information</em>. Retrieved from https://www.ippc.int/en/ephyto/ephyto-technical-information/</li>
+      <li>International Plant Protection Convention. (2019, November 12). <em>NPPO of South Africa E-phyto implementation</em>. Retrieved from https://www.ippc.int/en/countries/south-africa/reportingobligation/2019/12/nppo-of-south-africa-e-phyto-implementation/</li>
+      <li>Madan, N. (2023, August 30). <em>A Deep Dive into SHA-256: Working Principles and Applications</em>. Medium. Retrieved from https://medium.com/@madan_nv/a-deep-dive-into-sha-256-working-principles-and-applications-a38cccc390d4</li>
+      <li>Clarifresh. (2026, February 17). <em>Digital Product Passports for Food: The 2026 Guide</em>. Retrieved from https://clarifresh.com/blog/the-digital-product-passport-dpp-is-here-is-your-quality-data-ready/</li>
+      <li>European Parliament and Council. (2016, October 26). <em>Regulation (EU) 2016/2031 on protective measures against plant pests</em>. EUR-Lex. Retrieved from https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32016R2031</li>
+      <li>European Commission. (n.d.). <em>Trade in plants & plant products from non-EU countries</em>. Food Safety. Retrieved from https://food.ec.europa.eu/plants/plant-health-and-biosecurity/trade-plants-plant-products-non-eu-countries_en</li>
+      <li>The Conversation. (2022, August 24). <em>South African citrus: new EU rules are unjust and punitive</em>. Retrieved from https://theconversation.com/south-african-citrus-new-eu-rules-are-unjust-and-punitive-188387</li>
+      <li>EPPO Global Database. (n.d.). <em>Thaumatotibia leucotreta: addition to the EPPO Alert List</em>. Retrieved from https://gd.eppo.int/reporting/article-231</li>
+      <li>Department of Trade, Industry and Competition. (2024, July 26). <em>South Africa's cases against EU citrus measures move forward at WTO</em>. Retrieved from https://www.thedtic.gov.za/south-africas-cases-against-eu-citrus-measures-move-forward-at-wto-2/</li>
+      <li>IIPP. (2022, April 19). <em>EU requires cold treatment for citrus imports</em>. Retrieved from https://iifiir.org/en/news/eu-requires-cold-treatment-for-citrus-imports</li>
+      <li>International Plant Protection Convention. (n.d.). <em>ISPM 42: Requirements for the use of temperature treatments as phytosanitary measures</em>. Retrieved from https://openknowledge.fao.org/server/api/core/bitstreams/c233701c-7257-4b59-9738-888141c5403e/content</li>
+      <li>European Union. (n.d.). <em>TRACES NT Documentation</em>. Retrieved from https://webgate.ec.europa.eu/imsoc-guide/tracesnt-help/Default.htm</li>
+      <li>Gov.pl. (n.d.). <em>What is TRACES?</em>. Plant Health and Seed Inspection Service. Retrieved from https://www.gov.pl/web/piorin-en/what-is-traces</li>
+      <li>DigiProd Pass. (2025, June 19). <em>EUDR Compliance and the Essential Role of DPPs</em>. Retrieved from https://digiprodpass.com/blogs/preparing-for-the-eudr</li>
+      <li>Companies and Intellectual Property Commission. (n.d.). <em>CIPC</em>. Retrieved from https://www.cipc.co.za/</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>10. FAQs</h2>
+    <dl>
+      <dt>What is a phytosanitary certificate?</dt>
+      <dd>A phytosanitary certificate is an official document issued by a National Plant Protection Organization (NPPO) to certify that consignments of plants, plant products, or other regulated articles meet the phytosanitary import requirements of the importing country and are free from regulated pests.</dd>
+
+      <dt>What is the role of the IPPC in phytosanitary certification?</dt>
+      <dd>The International Plant Protection Convention (IPPC) is an intergovernmental treaty that develops and promotes International Standards for Phytosanitary Measures (ISPMs), such as ISPM 12, to facilitate safe trade and prevent the spread of plant pests.</dd>
+
+      <dt>How does the ePhyto system work?</dt>
+      <dd>The ePhyto system is an electronic system developed by the IPPC to facilitate the exchange of phytosanitary certificates between National Plant Protection Organizations (NPPOs) in a standardized XML format, enhancing efficiency and security.</dd>
+
+      <dt>What is a digital twin in the context of phytosanitary certificates?</dt>
+      <dd>A digital twin of a phytosanitary certificate is a virtual replica of the physical document, created by hashing its data (e.g., using SHA-256) and linking it to a Digital Product Passport (DPP). This allows for real-time verification and traceability within the supply chain.</dd>
+
+      <dt>Why is the False Codling Moth a concern for South African citrus exports to the EU?</dt>
+      <dd>The False Codling Moth (Thaumatotibia leucotreta) is a quarantine pest for the EU. Its presence in South African citrus can lead to import restrictions, making stringent phytosanitary measures like cold treatment protocols essential for market access.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>11. Defined Terms</h2>
+    <dl>
+      <dt>Phytosanitary Certificate</dt>
+      <dd>An official document issued by a National Plant Protection Organization (NPPO) certifying that a consignment of plants, plant products, or other regulated articles meets the phytosanitary import requirements of the importing country. <span data-wikidata="Q1143635"></span></dd>
+
+      <dt>International Plant Protection Convention (IPPC)</dt>
+      <dd>An international treaty that aims to prevent the spread and introduction of pests of plants and plant products, and to promote appropriate measures for their control. <span data-wikidata="Q1185060"></span></dd>
+
+      <dt>ePhyto</dt>
+      <dd>An electronic phytosanitary certificate, an electronic equivalent of a paper phytosanitary certificate exchanged through the IPPC ePhyto Hub. <span data-wikidata="Q1143635"></span></dd>
+
+      <dt>Digital Product Passport (DPP)</dt>
+      <dd>A digital record for a product containing information about its origin, materials, manufacturing processes, and sustainability attributes, designed to enhance transparency and traceability in supply chains. <span data-wikidata="Q124419967"></span></dd>
+
+      <dt>SHA-256</dt>
+      <dd>A cryptographic hash function that generates a unique, fixed-size 256-bit (32-byte) hash from input data, used for data integrity and authenticity verification. <span data-wikidata="Q650468"></span></dd>
+
+      <dt>False Codling Moth (FCM)</dt>
+      <dd><em>Thaumatotibia leucotreta</em>, a polyphagous pest endemic to sub-Saharan Africa, considered a quarantine pest by many importing regions, including the EU, due to its significant economic impact on crops like citrus. <span data-wikidata="Q2704439"></span></dd>
+
+      <dt>TRACES NT</dt>
+      <dd>The Trade Control and Expert System New Technology, the European Union's official electronic platform for managing health certificates for imported animals, animal products, food, feed, plants, and plant products. <span data-wikidata="Q115767868"></span></dd>
+    </dl>
+  </section>
+</article>

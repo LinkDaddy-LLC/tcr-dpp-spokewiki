@@ -1,0 +1,34 @@
+[
+  {
+    "q": "What is the Ecodesign for Sustainable Products Regulation (ESPR)?",
+    "a": "The ESPR is a new EU regulation that expands the scope of ecodesign requirements beyond energy-related products to nearly all physical goods. It aims to improve product circularity, durability, repairability, and overall environmental sustainability, with the Digital Product Passport (DPP) as a key tool for transparency."
+  },
+  {
+    "q": "How are product categories selected for Digital Product Passports under ESPR?",
+    "a": "Product categories are selected through delegated acts issued by the European Commission. These acts specify ecodesign requirements and DPP data fields for particular product groups, based on their environmental impact, market readiness, and stakeholder input. The ESPR Working Plan 2025-2030 outlines the roadmap for these acts."
+  },
+  {
+    "q": "Which products are in the first wave of ESPR and DPP implementation?",
+    "a": "The first wave of ESPR implementation includes textiles, batteries (under the EU Battery Regulation), electronics/ICT products (through horizontal measures), construction products (under the revised CPR), furniture, and mattresses. Delegated acts for these categories are expected between 2026 and 2029."
+  },
+  {
+    "q": "Does the ESPR affect companies outside the EU?",
+    "a": "Yes, the ESPR has a global impact. Any manufacturer, importer, or distributor selling products into the EU market, regardless of their country of origin, must comply with the regulation. Non-compliance can lead to products being blocked from entering the EU and potential penalties."
+  },
+  {
+    "q": "What kind of data will be required in a Digital Product Passport?",
+    "a": "DPP data fields vary by product category but generally include product identifiers, details of economic operators, compliance information, and sustainability/circularity data such as material composition, carbon footprint, repairability scores, and presence of substances of concern. Each delegated act specifies the precise data model."
+  },
+  {
+    "q": "What is the ESPR Working Plan 2025-2030?",
+    "a": "The ESPR Working Plan 2025-2030 is a five-year roadmap adopted by the European Commission. It outlines the priority product groups and horizontal measures that will be subject to delegated acts and DPP requirements, providing an indicative timeline for businesses to prepare."
+  },
+  {
+    "q": "How can businesses prepare for ESPR and DPP compliance?",
+    "a": "Businesses should proactively monitor regulatory developments, engage in stakeholder consultations, audit current data availability, map their supply chains for data collection, and build a Substance of Concern (SoC) register. Implementing robust data infrastructure and conducting pilot programs are also crucial steps."
+  },
+  {
+    "q": "Are there any product categories exempt from ESPR?",
+    "a": "Yes, exceptions are made for food, feed, medicine, medical products, and certain vehicles, as these are typically covered by other specific regulations or ecodesign criteria are impractical. However, the ESPR aims to cover almost all other physical products placed on the EU market."
+  }
+]

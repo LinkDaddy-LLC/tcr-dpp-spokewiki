@@ -1,0 +1,37 @@
+[
+  {
+    "term": "EU Battery Regulation 2023/1542",
+    "definition": "A comprehensive European Union legislative framework governing the entire lifecycle of batteries, aiming for sustainability, circularity, and reduced environmental impact.",
+    "wikidataId": "Q125413048" 
+  },
+  {
+    "term": "Carbon Footprint Declaration",
+    "definition": "A mandatory declaration under the EU Battery Regulation, requiring manufacturers to calculate and report the greenhouse gas emissions associated with a battery's lifecycle.",
+    "wikidataId": "Q1137025"
+  },
+  {
+    "term": "Digital Battery Passport (DBP)",
+    "definition": "A secure digital record linked to a specific battery, providing structured information about its identity, composition, performance, and sustainability. It becomes mandatory from 18 February 2027 for EV and industrial rechargeable batteries (>2kWh), accessible via a QR code.",
+    "wikidataId": ""
+  },
+  {
+    "term": "Life Cycle Assessment (LCA)",
+    "definition": "A methodology for assessing environmental impacts associated with all stages of a product's life, from raw material extraction through processing, manufacturing, distribution, use, repair and maintenance, and disposal or recycling.",
+    "wikidataId": "Q838406"
+  },
+  {
+    "term": "SHA-256 Hashing",
+    "definition": "A cryptographic hash function that generates a unique, fixed-size 256-bit hash value from any input data, used to ensure data integrity and detect tampering.",
+    "wikidataId": "Q2912521"
+  },
+  {
+    "term": "Product Environmental Footprint (PEF)",
+    "definition": "A multi-indicator measure of the environmental performance of a good or service throughout its life cycle, developed by the European Commission and based on LCA principles.",
+    "wikidataId": ""
+  },
+  {
+    "term": "Light Means of Transport (LMT) Batteries",
+    "definition": "Batteries providing electric power for traction to wheeled vehicles such as e-bikes and e-scooters, subject to specific requirements under the EU Battery Regulation.",
+    "wikidataId": ""
+  }
+]

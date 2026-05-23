@@ -1,0 +1,37 @@
+[
+  {
+    "term": "SIZA",
+    "definition": "The Sustainability Initiative of South Africa, a non-profit organization established in 2008 by the South African fruit industry to streamline ethical trade and environmental compliance for agricultural suppliers.",
+    "wikidataId": "Q7544282"
+  },
+  {
+    "term": "SHA-256",
+    "definition": "Secure Hash Algorithm 256-bit, a cryptographic hash function that generates a unique, fixed-size 256-bit hash value from any input data, used for data integrity checks."
+  },
+  {
+    "term": "Digital Product Passport (DPP)",
+    "definition": "A digital twin for a physical product that provides comprehensive information about the product\'s lifecycle, accessible by various stakeholders to retrieve information and verify credentials."
+  },
+  {
+    "term": "Trust Anchor",
+    "definition": "In the context of Digital Product Passports, a verifiable credential (like a hashed SIZA certificate) that provides an immutable and verifiable link to the ethical and environmental credentials of a product, ensuring data integrity and authenticity."
+  },
+  {
+    "term": "EU Corporate Sustainability Due Diligence Directive (CSDDD)",
+    "definition": "A legislative effort by the European Union to mandate responsible corporate behavior across global value chains, requiring companies to identify, prevent, mitigate, and account for adverse human rights and environmental impacts.",
+    "wikidataId": "Q117768616"
+  },
+  {
+    "term": "POPIA",
+    "definition": "The Protection of Personal Information Act, 2013, a South African law that sets conditions for the lawful processing of personal information, ensuring privacy and data protection.",
+    "wikidataId": "Q110860888"
+  },
+  {
+    "term": "GLOBALG.A.P. GRASP",
+    "definition": "GLOBALG.A.P. Risk Assessment on Social Practice, a voluntary add-on module to GLOBALG.A.P. certification designed to assess social practices on farms, including worker health & safety and welfare."
+  },
+  {
+    "term": "SA8000",
+    "definition": "Social Accountability 8000, a comprehensive, auditable international standard for social accountability that provides a framework for fair treatment of workers across all industries."
+  }
+]

@@ -1,0 +1,282 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://digitalproductpassports.co.za/wiki/cold-chain-integrity-log#article",
+      "headline": "Cold Chain Integrity Logging and Digital Product Passports for South African Perishable Exports",
+      "description": "A comprehensive technical guide to cold chain integrity logging, IoT temperature data capture, SHA-256 hashing of cold chain records, and their integration into Digital Product Passports for South African perishable exporters.",
+      "url": "https://digitalproductpassports.co.za/wiki/cold-chain-integrity-log",
+      "datePublished": "2026-04-06",
+      "dateModified": "2026-04-06",
+      "author": {
+        "@type": "Organization",
+        "name": "Africa DPP Registry",
+        "url": "https://digitalproductpassports.co.za"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Africa DPP Registry",
+        "url": "https://digitalproductpassports.co.za",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalproductpassports.co.za/logo.png"
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Cold Chain",
+        "sameAs": "https://www.wikidata.org/wiki/Q1053398"
+      },
+      "keywords": ["cold chain", "temperature logging", "digital product passport", "SHA-256", "PPECB", "South Africa", "perishable exports", "IoT", "EU food safety"],
+      "articleSection": ["Cold Chain Fundamentals", "PPECB Certification", "IoT Temperature Logging", "SHA-256 Hashing", "EU Compliance", "South African Context"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a cold chain integrity log in the context of a Digital Product Passport?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A cold chain integrity log is a time-stamped, tamper-evident record of temperature and humidity conditions throughout the journey of a perishable product from farm to port to destination. In a DPP context, the log file is SHA-256 hashed client-side before upload, meaning the original data never leaves the exporter's system — only the cryptographic fingerprint is stored in the registry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What role does PPECB play in cold chain certification for South African exporters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Perishable Products Export Control Board (PPECB) is the statutory body mandated under the Perishable Products Export Control Act 9 of 1983 to certify cold chain compliance for South African perishable exports. PPECB inspectors verify pre-cooling, reefer container settings, and temperature logs before issuing an export certificate. This certificate is a primary input document for DPP minting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which IoT temperature loggers are compatible with the Africa DPP Registry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The registry accepts temperature log exports from any logger that produces a standard CSV, JSON, or PDF report. Commonly used devices include Sensitech TempTale, Emerson GO Real-Time, Berlinger FreshWatcher, and DeltaTrak FlashLink. The log file is hashed in the browser before upload — the registry stores only the SHA-256 hash, not the raw data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a temperature excursion is detected during transit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A temperature excursion — any deviation outside the prescribed range — is recorded as a break-in-chain event in the DPP. The event timestamp, duration, and maximum deviation are logged. The passport status changes from VERIFIED to CONDITIONAL, and the importer is notified via the registry API. The excursion record is immutable once hashed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is cold chain data required for EU ESPR compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EU ESPR Regulation 2024/1781 does not explicitly mandate cold chain logs for all product categories, but EU food safety regulation EC 852/2004 (General Food Hygiene) and the specific import conditions for fresh produce under Regulation 543/2011 require documented temperature control throughout the supply chain. For South African citrus, PPECB cold treatment protocols are a phytosanitary requirement for EU market access."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitalproductpassports.co.za"},
+        {"@type": "ListItem", "position": 2, "name": "Wiki", "item": "https://digitalproductpassports.co.za/wiki"},
+        {"@type": "ListItem", "position": 3, "name": "Cold Chain Integrity Logging", "item": "https://digitalproductpassports.co.za/wiki/cold-chain-integrity-log"}
+      ]
+    }
+  ]
+}
+</script>
+
+<article itemscope itemtype="https://schema.org/TechArticle">
+
+<header>
+  <h1 itemprop="headline">Cold Chain Integrity Logging and Digital Product Passports for South African Perishable Exports</h1>
+  <p itemprop="description">A technical reference guide to cold chain integrity logging, IoT temperature data capture, SHA-256 hashing of cold chain records, and their integration into Digital Product Passports under EU food safety and ESPR compliance frameworks.</p>
+</header>
+
+<section id="introduction">
+  <h2>Introduction: The Cold Chain as a Compliance Infrastructure</h2>
+  <p>South Africa is the world's second-largest exporter of citrus fruit, the seventh-largest wine exporter, and a major supplier of deciduous fruit, table grapes, and subtropical produce to the European Union. In the 2024/25 season, South African perishable exports to the EU exceeded R48 billion in value, with citrus alone accounting for more than 150 million cartons. Every single consignment in this trade depends on an unbroken <span data-wikidata="Q1053398">cold chain</span> — a temperature-controlled logistics sequence that begins at the packhouse and ends at the EU importer's cold store.</p>
+
+  <p>The integrity of that cold chain is not merely a quality concern. Under EU food safety regulation <strong>EC 852/2004</strong> (General Food Hygiene Regulation), importers are legally required to demonstrate documented temperature control throughout the supply chain. Under the EU's specific import conditions for fresh citrus (Regulation 543/2011), cold treatment protocols are a phytosanitary requirement for access to the EU market. And under the emerging <a href="/wiki/eu-espr-regulation">EU ESPR Regulation 2024/1781</a>, the traceability of product condition data — including temperature history — is becoming a formal component of the <a href="/wiki/what-is-a-digital-product-passport">Digital Product Passport</a>.</p>
+
+  <p>This article explains how cold chain integrity logs are captured, hashed, and embedded in Digital Product Passports on the Africa DPP Registry. It covers the statutory role of the <span data-wikidata="Q7544282">Perishable Products Export Control Board (PPECB)</span>, the technical specifications for IoT temperature loggers, the <a href="/wiki/sha-256-hashing-explained">SHA-256 hashing</a> methodology for cold chain records, and the legal implications of break-in-chain events for South African exporters.</p>
+</section>
+
+<section id="cold-chain-fundamentals">
+  <h2>Cold Chain Fundamentals for South African Perishable Exports</h2>
+
+  <h3>Definition and Critical Control Points</h3>
+  <p>A cold chain is a temperature-controlled supply chain in which perishable goods are maintained within a prescribed temperature range from the point of harvest or production to the point of consumption. For South African agricultural exports, the cold chain encompasses five critical control points:</p>
+
+  <ol>
+    <li><strong>Pre-cooling at the packhouse:</strong> Fruit is cooled to pulp temperature within 24–48 hours of harvest. For citrus, the target pulp temperature is typically 0–1°C before loading.</li>
+    <li><strong>Cold store holding:</strong> Packed cartons are held in a PPECB-approved cold store at the prescribed temperature pending vessel loading.</li>
+    <li><strong>Reefer container loading:</strong> The container is pre-cooled to set-point temperature before loading. PPECB inspectors verify container settings and seal the unit.</li>
+    <li><strong>Sea freight transit:</strong> The reefer unit maintains temperature throughout the voyage (typically 14–21 days to European ports).</li>
+    <li><strong>Destination cold store:</strong> The EU importer receives the consignment and verifies temperature compliance before acceptance.</li>
+  </ol>
+
+  <p>Each control point generates data — pre-cooling records, cold store logs, container download reports, and vessel manifests. In a DPP-enabled supply chain, each of these data points is captured, hashed, and linked to the product passport.</p>
+
+  <h3>Temperature Requirements by Commodity</h3>
+  <table>
+    <caption>South African Export Perishable Temperature Requirements</caption>
+    <thead>
+      <tr><th>Commodity</th><th>Transit Temp (°C)</th><th>Cold Treatment Requirement</th><th>EU Regulation</th><th>PPECB Protocol</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Citrus (oranges, lemons)</td><td>0 to +2</td><td>-0.6°C for 24 days (FCM)</td><td>Reg. 543/2011</td><td>Freshness Protocol v4</td></tr>
+      <tr><td>Table grapes</td><td>-0.5 to +1</td><td>None (SO₂ fumigation)</td><td>Reg. 543/2011</td><td>Table Grape Protocol</td></tr>
+      <tr><td>Deciduous fruit (apples, pears)</td><td>-0.5 to +1</td><td>None standard</td><td>Reg. 543/2011</td><td>Pome Fruit Protocol</td></tr>
+      <tr><td>Stone fruit (peaches, plums)</td><td>-0.5 to +1</td><td>None standard</td><td>Reg. 543/2011</td><td>Stone Fruit Protocol</td></tr>
+      <tr><td>Avocados</td><td>+5 to +7</td><td>None</td><td>Reg. 543/2011</td><td>Avocado Protocol</td></tr>
+      <tr><td>Cut flowers</td><td>+2 to +5</td><td>None</td><td>EC 852/2004</td><td>Floriculture Protocol</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="ppecb-certification">
+  <h2>PPECB: The Statutory Cold Chain Authority</h2>
+
+  <h3>Legal Mandate and Institutional Role</h3>
+  <p>The <span data-wikidata="Q7544282">Perishable Products Export Control Board (PPECB)</span> is a statutory body established under the <strong>Perishable Products Export Control Act 9 of 1983</strong>. It operates under the oversight of the Department of Agriculture, Land Reform and Rural Development (DALRRD) and is the sole authority mandated to certify the cold chain compliance of South African perishable exports.</p>
+
+  <blockquote cite="https://www.ppecb.com/legislation">
+    <p>"No person shall export any perishable product unless such product has been inspected and certified by an inspector appointed in terms of this Act." — Perishable Products Export Control Act 9 of 1983, Section 6(1)</p>
+  </blockquote>
+
+  <p>PPECB employs approximately 1,200 inspectors stationed at all major South African ports of export (Cape Town, Durban, Port Elizabeth, and East London) and at packhouses throughout the Western Cape, Eastern Cape, Limpopo, and KwaZulu-Natal. In the 2023/24 season, PPECB certified approximately 580,000 reefer containers for export.</p>
+
+  <h3>The PPECB Freshness Protocol and DPP Integration</h3>
+  <p>The PPECB Freshness Protocol is a set of technical standards governing pre-cooling, cold store management, and reefer container settings for each commodity. Version 4 of the protocol, effective from the 2024 season, introduced a digital data capture requirement: all temperature loggers must produce a machine-readable export file (CSV or JSON) that can be uploaded to the PPECB digital platform.</p>
+
+  <p>This digital data capture requirement creates a direct integration pathway with the Africa DPP Registry. When a PPECB inspector certifies a consignment, the temperature log file is available for download. The exporter uploads this file to the registry's Minting Station, where it is <a href="/wiki/sha-256-hashing-explained">SHA-256 hashed client-side</a> and the hash is embedded in the product passport. The PPECB certificate number and inspection date are stored as metadata.</p>
+</section>
+
+<section id="iot-temperature-logging">
+  <h2>IoT Temperature Logging: Devices, Standards, and Data Formats</h2>
+
+  <h3>Logger Technology Overview</h3>
+  <p>Modern cold chain temperature logging uses a combination of single-use electronic data loggers (EDLs) and real-time IoT tracking devices. For South African perishable exports, the most widely deployed systems are:</p>
+
+  <dl>
+    <dt><span data-wikidata="Q3539153">Sensitech TempTale</span></dt>
+    <dd>Single-use USB logger with PDF and CSV export. The TempTale 4 USB is the most widely used logger in South African citrus exports, with approximately 40% market share. Data export produces a standardised PDF report and a raw CSV file. The CSV file is the preferred input for DPP hashing.</dd>
+
+    <dt>Emerson GO Real-Time</dt>
+    <dd>Cellular-connected real-time tracker with cloud dashboard. Provides live temperature alerts and automatic excursion notifications. Data is accessible via API in JSON format, which can be directly hashed for DPP integration.</dd>
+
+    <dt>Berlinger FreshWatcher</dt>
+    <dd>Swiss-manufactured logger with HACCP compliance certification. Widely used in the wine export sector. Produces PDF, CSV, and XML exports. The XML format contains structured metadata (logger ID, calibration certificate, measurement interval) that enriches the DPP record.</dd>
+
+    <dt>DeltaTrak FlashLink</dt>
+    <dd>USB logger with Windows software for data download. Produces PDF reports with embedded temperature graphs. Used primarily in the stone fruit and deciduous fruit sectors.</dd>
+  </dl>
+
+  <h3>Data Format Standards</h3>
+  <p>The Africa DPP Registry accepts temperature log files in three formats: CSV (comma-separated values with timestamp, temperature, and humidity columns), JSON (structured object with device metadata and measurement array), and PDF (for human-readable audit trail). The SHA-256 hash is computed on the raw file bytes — not on parsed data — ensuring that any modification to the file, including metadata changes, will produce a different hash.</p>
+
+  <p>The minimum required fields for a valid cold chain log in a DPP are: logger serial number, calibration certificate reference, measurement start timestamp (UTC), measurement end timestamp (UTC), measurement interval (minutes), prescribed temperature range (min/max °C), and the complete measurement array. Optional but recommended fields include: vessel name, container number, port of loading, port of discharge, and PPECB certificate number.</p>
+</section>
+
+<section id="sha256-hashing">
+  <h2>SHA-256 Hashing of Cold Chain Records</h2>
+
+  <h3>The Privacy-First Architecture</h3>
+  <p>Cold chain temperature logs contain commercially sensitive information: they reveal the exporter's logistics partners, shipping routes, and product handling practices. The Africa DPP Registry's privacy-first architecture ensures that the raw log file never leaves the exporter's browser. The <a href="/wiki/sha-256-hashing-explained">SHA-256 hash</a> is computed client-side using the Web Crypto API, and only the 64-character hexadecimal hash string is transmitted to the registry.</p>
+
+  <p>This architecture has three important consequences. First, the registry cannot reconstruct the original temperature log from the hash — the hash is a one-way function. Second, any party that holds the original log file can verify its integrity by recomputing the hash and comparing it to the registry record. Third, the hash serves as a legally admissible data integrity proof under <strong>ECTA 2002</strong> (Electronic Communications and Transactions Act, Section 14), which recognises electronic records as legally equivalent to paper records when their integrity can be demonstrated.</p>
+
+  <h3>The Hashing Process Step by Step</h3>
+  <ol>
+    <li>The exporter downloads the temperature log file from the logger software (CSV, JSON, or PDF).</li>
+    <li>The file is selected in the DPP Registry Minting Station upload interface.</li>
+    <li>The browser's Web Crypto API computes the SHA-256 hash of the file bytes: <code>crypto.subtle.digest('SHA-256', fileBuffer)</code>.</li>
+    <li>The hash is displayed to the exporter for verification before submission.</li>
+    <li>The hash, along with the logger serial number, PPECB certificate number, and commodity details, is submitted to the registry API.</li>
+    <li>The registry stores the hash in the Cloudflare D1 ledger and returns a passport URL: <code>digitalproductpassports.co.za/v/{hash}</code>.</li>
+  </ol>
+
+  <h3>Break-in-Chain Events</h3>
+  <p>A break-in-chain event occurs when the temperature log records a deviation outside the prescribed range. The registry's cold chain validation module analyses the uploaded hash metadata (not the raw file) to determine whether the exporter has declared any excursions. If an excursion is declared, the passport status is set to CONDITIONAL rather than VERIFIED, and the excursion details (timestamp, duration, maximum deviation) are recorded as a separate hash in the passport's document chain.</p>
+
+  <p>The immutability of the hash record means that a break-in-chain event cannot be retroactively removed from a passport. This is a deliberate design choice: it ensures that EU importers, customs authorities, and insurance underwriters can rely on the DPP as a complete and unaltered record of the product's temperature history.</p>
+</section>
+
+<section id="eu-compliance">
+  <h2>EU Regulatory Framework for Cold Chain Documentation</h2>
+
+  <h3>EC 852/2004: General Food Hygiene Regulation</h3>
+  <p>EU Regulation EC 852/2004 on the hygiene of foodstuffs requires food business operators to implement HACCP (Hazard Analysis and Critical Control Points) procedures and maintain records sufficient to demonstrate compliance. For perishable imports, this includes temperature monitoring records for the entire supply chain. Article 5(2)(g) specifically requires that records be kept for a period appropriate to the nature of the food business.</p>
+
+  <h3>Regulation 543/2011: Fresh Fruit and Vegetable Import Conditions</h3>
+  <p>Commission Implementing Regulation 543/2011 lays down detailed rules for the application of Council Regulation (EC) No 1234/2007 in respect of the fruit and vegetables and processed fruit and vegetables sectors. For South African citrus, the regulation specifies cold treatment protocols as a phytosanitary measure against <span data-wikidata="Q2787898">Thaumatotibia leucotreta</span> (False Codling Moth). The cold treatment protocol requires maintaining pulp temperature at -0.6°C or below for a minimum of 24 consecutive days, with continuous temperature monitoring and documentation.</p>
+
+  <blockquote cite="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011R0543">
+    <p>"The cold treatment shall be carried out in accordance with the conditions laid down in Annex VII, Part B, and the temperature of the consignment shall be monitored and recorded throughout the treatment period." — Commission Implementing Regulation 543/2011, Annex VII, Part B, Point 2</p>
+  </blockquote>
+
+  <h3>EU ESPR and Cold Chain Data</h3>
+  <p>The <a href="/wiki/eu-espr-regulation">EU ESPR Regulation 2024/1781</a> does not currently mandate cold chain logs as a required DPP data field for agricultural products. However, the regulation's delegated acts process — through which product-specific requirements are established — is expected to include cold chain data requirements for fresh produce in the 2027–2028 timeframe. Exporters who establish cold chain DPP records now will be positioned ahead of this requirement.</p>
+</section>
+
+<section id="south-african-context">
+  <h2>South African Context: Infrastructure, Challenges, and Opportunities</h2>
+
+  <h3>The Durban Port Cold Chain Infrastructure</h3>
+  <p>The Port of Durban handles approximately 60% of South Africa's reefer container exports by volume. The port's reefer plug capacity was expanded to 8,500 plugs in 2023, following the completion of the Durban Container Terminal Phase 2 expansion. However, the port continues to face challenges including power outages (load shedding), crane breakdowns, and vessel scheduling delays that can extend dwell times and create cold chain risk.</p>
+
+  <p>The DPP cold chain log captures dwell time at the port as a data point. Extended dwell times — particularly during load shedding events when reefer plugs may be disconnected — are recorded as potential excursion risks. The registry's cold chain validation module flags consignments with dwell times exceeding 72 hours for enhanced documentation.</p>
+
+  <h3>Load Shedding and Cold Chain Integrity</h3>
+  <p>South Africa's ongoing electricity supply challenges (load shedding) represent a systemic cold chain risk. Packhouses, cold stores, and port facilities are required to maintain backup power for reefer operations, but compliance is uneven. The DPP cold chain log provides a mechanism for exporters to document backup power events and demonstrate that temperature integrity was maintained despite grid interruptions.</p>
+
+  <p>Under <strong>POPIA 2013</strong> (Protection of Personal Information Act), the cold chain log may contain personal information if it includes the names of PPECB inspectors or packhouse workers. The registry's privacy-first hashing architecture ensures that this personal information is never transmitted to or stored by the registry — only the cryptographic hash of the complete document is retained.</p>
+
+  <h3>Insurance and Liability Implications</h3>
+  <p>Marine cargo insurance for South African perishable exports is typically underwritten under the Institute Cargo Clauses (A) with a Perishable Cargo extension. The DPP cold chain log has significant implications for insurance claims. A complete, unaltered temperature log — verified by its SHA-256 hash in the DPP registry — provides irrefutable evidence of the product's condition at each stage of the journey. This evidence is increasingly required by insurers as a condition of claims settlement.</p>
+
+  <p>Conversely, a break-in-chain event recorded in the DPP provides the insurer with grounds to investigate whether the temperature excursion caused the damage claimed. The immutability of the DPP record means that neither the exporter nor the carrier can alter the temperature history after the fact — a protection for both parties in a dispute.</p>
+</section>
+
+<section id="future-developments">
+  <h2>Future Developments: Real-Time Cold Chain Streaming</h2>
+
+  <p>The current DPP cold chain integration model is document-based: the exporter downloads a log file at the end of the journey and uploads it to the registry. The next phase of development — currently in the registry's technical roadmap — is real-time cold chain data streaming via IoT API.</p>
+
+  <p>In the real-time model, the temperature logger transmits data directly to the registry API at configurable intervals (e.g., every 15 minutes). The registry computes a rolling hash of the accumulated data stream and updates the passport's cold chain status in real time. EU importers and customs authorities can monitor the cold chain status of a consignment in transit via the public verification endpoint at <code>digitalproductpassports.co.za/api/verify/{hash}</code>.</p>
+
+  <p>This real-time model aligns with the EU's Digital Product Passport vision under ESPR, which anticipates that DPP data will be updated throughout the product lifecycle, not just at the point of production. It also aligns with the <a href="/wiki/globalgap-digital-link">GS1 Digital Link standard</a>, which enables a single QR code to resolve to different data views depending on the scanning party's access rights.</p>
+</section>
+
+<section id="compliance-checklist">
+  <h2>Cold Chain DPP Compliance Checklist for South African Exporters</h2>
+
+  <ol>
+    <li>Ensure all temperature loggers produce a machine-readable export file (CSV or JSON) in addition to PDF reports.</li>
+    <li>Verify that logger calibration certificates are current (typically annual recalibration required).</li>
+    <li>Obtain the PPECB certificate number for each consignment before DPP minting.</li>
+    <li>Download the temperature log file immediately after container download at the destination port.</li>
+    <li>Upload the log file to the DPP Registry Minting Station — the SHA-256 hash is computed automatically.</li>
+    <li>If a temperature excursion occurred, declare it in the DPP metadata before submission.</li>
+    <li>Retain the original log file for a minimum of 3 years (EU food safety record-keeping requirement).</li>
+    <li>Provide the DPP verification URL to the EU importer for their own compliance records.</li>
+  </ol>
+</section>
+
+<section id="see-also">
+  <h2>See Also</h2>
+  <ul>
+    <li><a href="/wiki/sha-256-hashing-explained">SHA-256 Cryptographic Hashing: The Forensic Foundation of Digital Product Passports</a></li>
+    <li><a href="/wiki/phytosanitary-digital-twin">Phytosanitary Digital Twins: How South African Plant Health Certificates Become DPP Data</a></li>
+    <li><a href="/wiki/eu-espr-regulation">EU ESPR Regulation 2024/1781: The Complete Compliance Guide for African Exporters</a></li>
+    <li><a href="/wiki/globalgap-digital-link">GlobalG.A.P. Certification and GS1 Digital Link Integration in South African DPPs</a></li>
+    <li><a href="/wiki/smart-contract-fruit-release">Smart Contract Fruit Release Protocols and Automated DPP Verification</a></li>
+    <li><a href="/wiki/what-is-a-digital-product-passport">What is a Digital Product Passport? The Complete Encyclopedia Entry</a></li>
+  </ul>
+</section>
+
+</article>
